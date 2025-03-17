@@ -19,17 +19,16 @@ color: #ffffff;
     border-bottom-right-radius: 230px;
 }
 .div-geral-carrossel{
-       
-   
     text-align: center;
     align-items: center;
+   
    
         
 }
 
 .text1-carrossel {
     font-family: "Dancing Script", cursive;
-    font-size: 60px;
+    font-size: 50px;
     padding: 80px 50px 0;
     
     font-weight: 800;
@@ -38,8 +37,7 @@ color: #ffffff;
 
 .text2-carrossel {
     font-family: "Dancing Script", cursive;
-    font-size: 70px;
-  
+    font-size: 60px;
     font-weight: 800;
    
     
@@ -83,8 +81,8 @@ color: #ffffff;
     justify-content: center;
     align-items: center;
     position: fixed;
-    right: 5px;
-    bottom: 10px;
+    right: 0.5em;
+    bottom: 0.5em;
     z-index: 1;
     cursor: pointer;
     text-align: center;
@@ -110,9 +108,7 @@ color: #ffffff;
        justify-content: center;
        align-items: center;
        flex-direction: column;
-      
-    
-       
+     
     } 
     .template::before{
         background-image: url("../Carrossel/Img/fundo-mobile.jpeg");
@@ -137,8 +133,6 @@ color: #ffffff;
     .text3-carrossel {
         font-size: 20px;
         text-align: center; 
-        
-   
     }
 
     .btn-home {
