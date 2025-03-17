@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Carrossel from '../../components/Carrossel/Carrossel'
 import SobreMim from '../../components/SobreMim/SobreMim'
 import Footer from '../../components/Footer/Footer'
@@ -13,7 +14,7 @@ import Cursos from '../../components/Cursos/Cursos'
 const Home = () => {
   return (
     <div>
-        
+       
         <Carrossel></Carrossel>
         <SobreMim></SobreMim>
         <Cursos></Cursos>

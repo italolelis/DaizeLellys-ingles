@@ -11,13 +11,14 @@ color: #ffffff;
     position: absolute;
     inset: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                url("./Img/fundo-web.png");
+                url("./Img/teste.png");
     background-size: cover;
     z-index: -1;
     background-attachment: fixed;
     border-bottom-left-radius: 230px;
     border-bottom-right-radius: 230px;
 }
+
 .div-geral-carrossel{
     text-align: center;
     align-items: center;
