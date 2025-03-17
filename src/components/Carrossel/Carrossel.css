@@ -1,47 +1,53 @@
 .template {
 height: 120vh;
 position: relative;
+color: #ffffff;
 
 
  
 } 
-.template::before{
+.template::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("./Img/fundo-2.webp");
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url("./Img/fundo-web.png");
     background-size: cover;
     z-index: -1;
-    opacity: 0.7;
     background-attachment: fixed;
     border-bottom-left-radius: 230px;
-    border-bottom-right-radius:230px;
-    
-    
+    border-bottom-right-radius: 230px;
 }
 .div-geral-carrossel{
-    width: 40%;
+       
+   
     text-align: center;
+    align-items: center;
+   
+        
 }
 
 .text1-carrossel {
-    font-size: 40px;
+    font-family: "Dancing Script", cursive;
+    font-size: 60px;
     padding: 80px 50px 0;
-    color: #1c2b6c;
-    font-weight: 800;
     
+    font-weight: 800;
+        
 }
 
 .text2-carrossel {
-    font-size: 50px;
-     color: #b22234;
+    font-family: "Dancing Script", cursive;
+    font-size: 70px;
+  
     font-weight: 800;
    
     
 }
 
 .text3-carrossel {
-    font-size: 20px;
+    font-family: "Dancing Script", cursive;
+    font-size: 40px;
      
 }
 
@@ -52,13 +58,13 @@ position: relative;
     border: 2px solid #ffffff;
     border-radius: 25px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 200px;
-    height: 80px;
+    width: 300px;
+    height: 120px;
     margin: 40px;
 }
 
 .btn-home a {
-    font-size: 1.5em;
+    font-size: 2em;
     text-decoration: none;
     color: #ffffff;
 }
@@ -104,13 +110,12 @@ position: relative;
        justify-content: center;
        align-items: center;
        flex-direction: column;
-       color:#b22234;     
+      
     
        
     } 
     .template::before{
-
-        background-image: url("../Carrossel/Img/bigban.jpg");
+        background-image: url("../Carrossel/Img/fundo-mobile.jpeg");
         opacity: 0.7;
         border-bottom-left-radius: 30px;
         border-bottom-right-radius: 30px;
@@ -132,8 +137,20 @@ position: relative;
     .text3-carrossel {
         font-size: 20px;
         text-align: center; 
-        color: black;
+        
    
     }
+
+    .btn-home {
+        width: 200px;
+        height: 100px;
+        margin: 150px;
+    }
+    .btn-home a {
+        font-size: 1.5em;
+        text-decoration: none;
+        color: #ffffff;
+    }
+
 }
 

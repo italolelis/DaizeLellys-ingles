@@ -4,6 +4,12 @@
 }
 
 /* ----- Header ----- */
+
+.header{
+    background-color: aliceblue;
+    opacity: 0.9;
+    width: 100%;
+}
  
 .div-logo{
     display: flex;
@@ -73,6 +79,12 @@
     border-radius: 10px;
     text-align: center;
 }
+.img-sociais{
+    width: 70px;
+    cursor: pointer;
+    
+}
+
 }
 
 

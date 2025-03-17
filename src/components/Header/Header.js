@@ -20,8 +20,8 @@ const Header = () => {
       <Container>
       <Navbar.Brand className='div-logo'>
           
-          <img className='fonte' src={logoDaize} alt='/'/>
-
+         
+          <Nav.Link><NavLink to='/'> <img className='fonte' src={logoDaize} alt='/'/></NavLink></Nav.Link>
           </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">

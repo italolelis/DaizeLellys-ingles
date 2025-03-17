@@ -1,6 +1,6 @@
 import React from 'react'
 import './SobreMim.css'
-import daize from './img/daize.jpg'
+import daize from './img/daize-lellys.jpeg'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
