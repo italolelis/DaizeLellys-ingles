@@ -57,9 +57,10 @@ color: #ffffff;
     border: 2px solid #ffffff;
     border-radius: 25px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    width: 300px;
-    height: 120px;
-    margin: 40px;
+    width: 18.75rem;
+    height: 7.5rem;
+    margin-top: 12rem;
+    
 }
 
 .btn-home a {
@@ -103,17 +104,11 @@ color: #ffffff;
 
 
 @media (max-width: 800px) {
-    .template {
-       display: flex;
-       height: 50%;
-       justify-content: center;
-       align-items: center;
-       flex-direction: column;
-     
-    } 
+ 
     .template::before{
-        background-image: url("../Carrossel/Img/fundo-mobile.jpeg");
-        opacity: 0.7;
+        background-attachment: scroll; /* Evita problemas de fixação em mobile */
+        background-position: center top;
+        height: 100vh;
         border-bottom-left-radius: 30px;
         border-bottom-right-radius: 30px;
     }
@@ -136,16 +131,8 @@ color: #ffffff;
         text-align: center; 
     }
 
-    .btn-home {
-        width: 200px;
-        height: 100px;
-        margin: 150px;
-    }
-    .btn-home a {
-        font-size: 1.5em;
-        text-decoration: none;
-        color: #ffffff;
-    }
+ 
+    
 
 }
 
