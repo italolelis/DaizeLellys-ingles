@@ -17,7 +17,9 @@ const Carrossel = () => {
   <div className="div-geral-carrossel">
   <div className="img-container">
       <img src={DaizeLellys} className="img-carrossel" alt='' />
-    </div>
+        
+  </div>
+
   <div className="content-container">
   
     <div className="text-container">
