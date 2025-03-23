@@ -25,7 +25,7 @@ const Carrossel = () => {
       <h2 className="text2-carrossel">Abra espaço para conhecer novas culturas</h2>
       <h2 className="text3-carrossel">Aprenda inglês do modo mais divertido</h2>
       <button className="btn-home">
-        <a href="https://api.whatsapp.com/send?phone=5583999220306&text=Quero+agendar+uma+aula+experimental%21" target="_blank">
+        <a href="https://api.whatsapp.com/send?phone=5583999220306&text=Quero+agendar+uma+aula+experimental%21" target="blank">
           Comece agora!
         </a>
       </button>
