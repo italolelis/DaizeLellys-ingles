@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
   
 }
 /* Container geral */
@@ -14,6 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+   
   
 }
 
@@ -133,8 +135,15 @@
 
 
 @media (max-width: 800px) {
- 
+
+    .div-geral-carrossel {
+      flex-wrap: wrap;
+       
+      
+    }
     
+    
+   
     .text1-carrossel {
         font-size: 30px;
         text-align: center;

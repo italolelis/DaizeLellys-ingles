@@ -4,7 +4,7 @@
     height: 100%;
     width: 100%;
     padding: 50px 40px;
-    background-size: cover;
+    
 
 }
 
@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+  
 
 }
 
@@ -32,7 +32,6 @@
     font-size: 1.1rem;
     font-weight: 400;
     margin-top: 50px;
-    padding: 20px;
     border-radius: 20px;
 }
 
@@ -79,4 +78,26 @@ bottom: 4px;
 .button-sobre-mim:hover {
     color: #fff;
     background-color: #72131e;
+}
+
+@media (max-width: 800px) {
+
+    .img-daize {
+        width: 20rem;
+        height: 30rem;
+        border-radius: 20px;
+    
+    }
+
+    .text-h1{
+        margin-top: 20px;
+        font-size: 2rem;
+        
+        
+    }
+    .text-h1::before{
+       
+        bottom: 1px;
+        
+        }
 }
