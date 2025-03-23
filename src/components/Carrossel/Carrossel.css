@@ -1,37 +1,67 @@
 .template {
-height: 120vh;
-position: relative;
-color: #ffffff;
-
-
- 
-} 
-.template::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                url("./Img/teste.png");
-    background-size: cover;
-    z-index: -1;
-    background-attachment: fixed;
-    border-bottom-left-radius: 230px;
-    border-bottom-right-radius: 230px;
+    min-height: 100vh; /* Evita que a header seja empurrada para fora */
+    background-color: black;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+}
+/* Container geral */
+.div-geral-carrossel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
 }
 
-.div-geral-carrossel{
-    text-align: center;
+/* Alinha imagem e texto lado a lado */
+.content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    gap: 20px;
+    
+}
+
+/* Imagem ocupa metade da div e fica dentro do template */
+.img-container {
+   
+    height: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center;
    
-   
-        
 }
 
+/* Faz a imagem se ajustar corretamente */
+.img-carrossel {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para cobrir a área sem distorcer */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Texto ocupa a outra metade */
+.text-container {
+   
+  
+    text-align: center;
+    padding: 20px;
+}
+.text-container h2 {
+    margin: 10px 0;
+  }
+  
 .text1-carrossel {
     font-family: "Dancing Script", cursive;
     font-size: 50px;
-    padding: 80px 50px 0;
-    
     font-weight: 800;
         
 }
@@ -54,13 +84,12 @@ color: #ffffff;
     color: #ffffff;
     font-weight: 700;
     background-color: #b22234;
-    border: 2px solid #ffffff;
+    border: 10px groove rgba(170, 36, 53, 1);
     border-radius: 25px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 10px 28px 10px rgba(255, 255, 255, 1);
     width: 18.75rem;
     height: 7.5rem;
-    margin-top: 12rem;
-    
+    margin-top: 2rem;
 }
 
 .btn-home a {
@@ -71,7 +100,7 @@ color: #ffffff;
 
 .btn-home:hover {
     background-color: #ffffff;
-    border: 2px solid #b22234;
+    border: 10px groove #ece6e7;
 }
 
 .btn-home:hover a {
@@ -105,19 +134,7 @@ color: #ffffff;
 
 @media (max-width: 800px) {
  
-    .template::before{
-        background-attachment: scroll; /* Evita problemas de fixação em mobile */
-        background-position: center top;
-        height: 100vh;
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
-    }
-
-    .div-geral-carrossel{
-        width: 100%;
-        text-align: center;
-    }
-
+    
     .text1-carrossel {
         font-size: 30px;
         text-align: center;
@@ -131,7 +148,19 @@ color: #ffffff;
         text-align: center; 
     }
 
- 
+    .btn-home {
+        color: #ffffff;
+        font-weight: 700;
+        background-color: #b22234;
+        border: 10px groove rgba(170, 36, 53, 1);
+        border-radius: 25px;
+        box-shadow: 0px 10px 28px 10px rgba(255, 255, 255, 1);
+        width: 18rem;
+        height: 7.5rem;
+        margin-top: 2rem;
+    }
+    
+   
     
 
 }

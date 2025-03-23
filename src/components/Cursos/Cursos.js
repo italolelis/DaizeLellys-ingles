@@ -38,7 +38,7 @@ const Cursos = () => {
       id: 4,
       image: musica,
       title: "Inglês com Música",
-      text: "Você já parou para pensar em como a música é poderosa? Ouvir música é algo que a maioria de nós gosta muito e faz com enorme frequência. Só o fato de ouvirmúsicas em inglês já te ajudará a ter mais contato com o idioma e você terá a oportunidade de aumentar (e muito!) o seu vocabulário. Mesmo sendo  iniciante, você aprenderá muito vocabulário e pronúncia. ",
+      text: "Já parou para pensar no poder da música no aprendizado? A música faz parte do nosso dia a dia e, sem perceber, muitas vezes já estamos em contato com o inglês através das canções que ouvimos. No curso Inglês com Música, você vai muito além de apenas escutar. Vamos explorar juntos o significado e o contexto das músicas, analisar a letra e a tradução, e, claro, trabalhar cuidadosamente a pronúncia para que você aprenda a cantar e falar com mais confiança.",
     },
     {
       id: 5,
