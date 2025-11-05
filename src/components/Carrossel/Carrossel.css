@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Satisfy&display=swap");
+
 .template {
     min-height: 100vh; /* Evita que a header seja empurrada para fora */
-    background-color: #1c2b6cf9;
+    background-color: #F3EDE2;
     color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -33,66 +35,77 @@
 
 /* Imagem ocupa metade da div e fica dentro do template */
 .img-container {
-   
+    
     height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     
-   
-}
+    
+} 
 
 /* Faz a imagem se ajustar corretamente */
 .img-carrossel {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajusta a imagem para cobrir a área sem distorcer */
-    max-width: 100%;
-    max-height: 100%;
-    
+   width: 100%;
+   display: flex;
+   justify-items: center;
+   align-items: center;
+   overflow: hidden;
+   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);   
+}
+
+.img-carrossel img {
+   width: 100%;
+   height: 100%;
+   object-fit:cover;
+       
 }
 
 /* Texto ocupa a outra metade */
 .text-container {
-   
-  
+    width: 40rem;  
     text-align: center;
     padding: 20px;
+    
+            
 }
 .text-container h2 {
     margin: 10px 0;
+    
   }
   
 .text1-carrossel {
-    
+    font-family: "Playfair Display", serif;
+    font-style: italic;
     font-size: 50px;
-    font-weight: 800;
+    color: #A92222;
+       
         
 }
 
 .text2-carrossel {
-   
+    font-family:"Nunito", sans-serif;
     font-size: 60px;
     font-weight: 800;
-   
+    color:#2B2B2B;
+       
     
 }
 
 .text3-carrossel {
-    
     font-size: 40px;
+    color: #1E3A5F;
      
 }
 
 .btn-home {
     color: #ffffff;
     font-weight: 700;
-    background-color: #b22234;
-    border: 10px groove rgba(170, 36, 53, 1);
+    background-color: #A92222;
     border-radius: 25px;
-    box-shadow: 0px 10px 28px 10px rgba(255, 255, 255, 1);
-    width: 18.75rem;
-    height: 7.5rem;
+    width: 15.75rem;
+    height: 5.5rem;
     margin-top: 2rem;
 }
 
@@ -104,7 +117,7 @@
 
 .btn-home:hover {
     background-color: #ffffff;
-    border: 10px groove #ece6e7;
+   
 }
 
 .btn-home:hover a {
@@ -140,11 +153,9 @@
 
     .div-geral-carrossel {
       flex-wrap: wrap;
-       
-      
+           
     }
-    
-    
+      
    
     .text1-carrossel {
         font-size: 30px;
@@ -163,12 +174,11 @@
         color: #ffffff;
         font-weight: 700;
         background-color: #b22234;
-        border: 10px groove rgba(170, 36, 53, 1);
         border-radius: 25px;
-        box-shadow: 0px 10px 28px 10px rgba(255, 255, 255, 1);
-        width: 18rem;
-        height: 7.5rem;
+        width: 12rem;
+        height: 5rem;
         margin-top: 2rem;
+        font-size: 0.8rem;
     }
     
    

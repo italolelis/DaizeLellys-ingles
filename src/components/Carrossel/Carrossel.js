@@ -1,7 +1,7 @@
 import React from 'react'
 import './Carrossel.css'
 import Header from '../Header/Header'
-import DaizeLellys from './Img/fundotest.jpeg'
+import DaizeLellys from './Img/daize-carrossel.png'
 
 import { IoLogoWhatsapp } from "react-icons/io";
 
@@ -15,10 +15,7 @@ const Carrossel = () => {
   <div className='template' id='home'>
          
   <div className="div-geral-carrossel">
-  <div className="img-container">
-      <img src={DaizeLellys} className="img-carrossel" alt='' />
-        
-  </div>
+
 
   <div className="content-container">
   
@@ -32,6 +29,14 @@ const Carrossel = () => {
         </a>
       </button>
     </div>
+
+  </div>
+     <div className="img-container">
+      <div className="img-carrossel">
+
+      <img src={DaizeLellys}  alt='' />
+    </div>
+        
   </div>
 </div>
         
