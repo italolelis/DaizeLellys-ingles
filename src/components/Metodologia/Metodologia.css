@@ -1,4 +1,5 @@
 .metodologia{
+   background-color: #faeddd;
    display: flex;
    flex-direction: column;
    height: 100%;
@@ -14,14 +15,15 @@
    
    }
    .metodologia>h1{
-      font-family: 'Rowdies', cursive;
+      font-family: 'Cinzel', serif;
       text-align: center;
+      font-weight: 700;
       
    }
         
    .metodologia>p{
       position: relative;
-      font-family: 'Rowdies', cursive;
+      font-family: 'Cinzel', serif;
       text-align: center;
       font-size: 1.2rem;
      
@@ -43,13 +45,13 @@
    }
   
     .button-ingles{
-      color: #b22234;
+      color: #a87e14;
       font-weight: 700;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #ffffff;
-      border: 2px solid #b22234;
+      background-color: #faeddd;
+      border: 2px solid #a87e14;
       border-radius: 40px;
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
       width: 200px;
@@ -60,12 +62,12 @@
 
    .button-ingles a{
       text-decoration: none;
-      color: #b22234;
+      color: #a87e14;
          
    }
    
    .button-ingles:hover{
-      background-color: #b22234;
+      background-color: #a87e14;
       border: 2px solid #ffffff;
       color: #ffffff;
    }

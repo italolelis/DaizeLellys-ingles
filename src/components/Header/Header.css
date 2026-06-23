@@ -6,7 +6,7 @@
 /* ----- Header ----- */
 
 .header{
-    background-color: #F3EDE2;
+    background-color: #fbeede;
     opacity: 0.8;
     width: 100%;
 }
@@ -35,18 +35,19 @@
 }
 
 .nav-link{
-    color: rgba(0, 0, 0, 0.986);
+    color: #011433;
+    text-decoration: none;
   
 }
 
 .nav-link a{
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.884);
-    border-bottom: 2px solid rgba(0,0,0,.55);
+    color: #011433;
+    
 }
 .nav-link a:hover{
     text-decoration: none;
-    color: rgb(66, 64, 64);
+    color: #011433;
     
 }
 
@@ -65,8 +66,33 @@
 
 .nav-link .active {
     text-decoration: none;
-    color: #b22234!important; 
-    border-bottom: 2px solid #b22234!important;
+    color: #a67e26!important; 
+    border-bottom: 2px solid #a67e26!important;
+}
+
+.btn-home {
+    color: #ffffff;
+    font-weight: 600;
+    background-color: #a87e14;
+    border-radius: 15px;
+    width: 7.75rem;
+    height: 3.5rem;
+    
+}
+
+.btn-home a {
+    font-size: 1em;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.btn-home:hover {
+    background-color: #ffffff;
+   
+}
+
+.btn-home:hover a {
+    color: #a87e14;
 }
 
 @media (max-width: 990px) {
@@ -75,7 +101,7 @@
    height: 100px;
 }
 .me-auto{
-    background-color: #ffffff94;
+    background-color: #011433;
     border-radius: 10px;
     text-align: center;
 }

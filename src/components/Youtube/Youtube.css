@@ -4,14 +4,14 @@
     height: 100%;
     width: 100%;
     padding:40px;
-    background-color: #acb5df75;
-    color: #1c2b6c;
+    background-color: #fbeede;
+    color: #011433;
     
 }
 
 .youtube-sessao h1{
     position: relative;
-    font-family: 'Rowdies', cursive;
+    font-family: 'Cinzel', serif;
     font-size: 3rem;
     text-align: center;
    
@@ -40,20 +40,20 @@ iframe{
 .button-youtube{
 color: #ffffff;
 font-weight: 700;
-background-color: #b22234;
-border: 2px solid #ffffff;
-border-radius: 30px;
+background-color: #011433;
+border-radius: 20px;
 box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-width: 200px;
+width: 250px;
 height: 84px;
-margin-top: 50px;
+margin-top: 30px;
+margin-bottom: 50px;
 
 }
 
 .button-youtube:hover{
 border: none;
-color: #fff;
-background-color: #72131e;
+color: #011433;
+background-color:#a87e14;
 
 
 }

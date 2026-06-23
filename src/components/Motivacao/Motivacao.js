@@ -20,34 +20,34 @@ function Motivacao() {
       <Container className="container-motivacao">
         <div className="row-container">
           <Figure className="img-figura animate__animated animate__fadeInDown animate__delay-2s">
-            <Image className="img-motivacao" width={120} height={120} roundedCircle src={dinheiro} />
+            <Image className="img-motivacao" width={200} height={200} roundedCircle src={dinheiro} />
             <Figure.Caption className="caption-motivacao">Ganhar Melhor</Figure.Caption>
           </Figure>
 
           <Figure className="img-figura animate__animated animate__fadeInDown animate__delay-2s" >
-            <Image className="img-motivacao" width={120} height={120} roundedCircle src={interagir} />
+            <Image className="img-motivacao" width={200} height={200} roundedCircle src={interagir} />
             <Figure.Caption className="caption-motivacao">Interagir com outras Culturas</Figure.Caption>
           </Figure>
 
           <Figure className="img-figura animate__animated animate__fadeInDown animate__delay-3s">
-            <Image className="img-motivacao" width={120} height={120} roundedCircle src={viajar} />
+            <Image className="img-motivacao" width={200} height={200} roundedCircle src={viajar} />
             <Figure.Caption className="caption-motivacao">
               Viajar com mais segurança e aproveitamento
             </Figure.Caption>
           </Figure>
 
           <Figure className="img-figura animate__animated animate__fadeInDown animate__delay-3s">
-            <Image className="img-motivacao" width={120} height={120} roundedCircle src={explorar} />
+            <Image className="img-motivacao" width={200} height={200} roundedCircle src={explorar} />
             <Figure.Caption className="caption-motivacao">Explorar Conhecimento</Figure.Caption>
           </Figure>
 
           <Figure className="img-figura animate__animated animate__fadeInDown animate__delay-4s">
-            <Image className="img-motivacao" width={120} height={120} roundedCircle src={cantar} />
+            <Image className="img-motivacao" width={200} height={200} roundedCircle src={cantar} />
             <Figure.Caption className="caption-motivacao">Cantar em inglês</Figure.Caption>
           </Figure>
 
           <Figure className="img-figura animate__animated animate__fadeInDown animate__delay-4s">
-            <Image className="img-motivacao" width={120} height={120} roundedCircle src={intercambio} />
+            <Image className="img-motivacao" width={200} height={200} roundedCircle src={intercambio} />
             <Figure.Caption className="caption-motivacao">
               Morar/Estudar /Trabalhar no exterior
             </Figure.Caption>
