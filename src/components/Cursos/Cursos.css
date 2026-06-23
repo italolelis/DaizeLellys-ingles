@@ -4,13 +4,13 @@
     padding: 50px;
     height: 100%;
     width: 100%;
-    background-color: #1c2b6c;
+    background-color: #011433;
     background-size: cover;
        
 }
 .cursos-h1{
   text-align: center;
-  font-family: 'Rowdies', cursive;
+  font-family: 'Cinzel', serif;
  
 }
 
@@ -33,7 +33,7 @@
 }
 .title>p{
   position: relative;
-  font-family: 'Rowdies', cursive;
+  font-family: 'Cinzel', serif;
   
 }
 .title>p::before{
@@ -79,6 +79,7 @@
 
 .text-curso {
   background-color: #0b0c0c41;
+  font-family: 'Cinzel', serif;;
   color: white;
   width: 22rem;
   height: 18rem;
@@ -89,7 +90,7 @@
 }
 
 .cursos-p{
-  font-family: 'Rowdies', cursive;
+  font-family: 'Cinzel', serif;
   text-align: center;
   font-size: 1rem;
   color: #ffffff;
@@ -120,7 +121,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #b22234;
+  background-color: #a87e14;
   border: 2px solid #ffffff;
   border-radius: 20px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -136,11 +137,11 @@
 
 .btn-cursos:hover {
   background-color: #ffffff;
-  border: 2px solid #b22234;
+  border: 2px solid #a87e14;
 }
 
 .btn-cursos:hover a {
-  color: #b22234;
+  color: #a87e14;
 }
 
 @media (max-width: 800px) {
