@@ -1,50 +1,132 @@
-.footer {
-    background-color: #011433;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-    
-}
-.redes-sociais>a{
-  color: #FFFFFF;
-  margin: 15px;
-  font-size: 25px;
+body{
+  background-color: #fbf6ee;
+  
 }
 
-.p-sociais-footer{
-  font-weight: 700;
-  font-size: 16px;
-  margin-left: 20px;
+/* Configuração do Bloco do Rodapé */
+.custom-footer {
+  position: relative;
+  background-color: #061c43; /* O azul marinho escuro do site */
+  padding: 100px 40px 30px 40px; /* Espaço maior no topo para a curva respirar */
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  
+  /* CRIA A CURVA NO AZUL (Apenas no lado esquerdo) */
+  border-top-left-radius: 85% 70px;
+  border-top-right-radius: 0% 0px;
+  
+  /* A LINHA DOURADA (Gruda na curva nativamente) */
+  border-top: 6px solid #a87e14; 
 }
 
-#link-topo{
-  width: 50px;
-  height: 50px;
-  text-decoration: none;
-  color: #FFFFFF;
-  background-color: #1c2b6c;
-  font-size: 2rem;
+/* Container que alinha os elementos internos */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Conteúdo das Redes Sociais */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* POSICIONAMENTO DA IMAGEM NO CENTRO E ACIMA DA BORDA */
+.footer-top-illustration {
   position: absolute;
-  right: 10px;
-  bottom: 250px;
-  border-radius: 20%;
+  top: -45px; /* Empurra metade da imagem para fora da linha azul */
+  left: 50%;
+  transform: translateX(-50%); /* Centralização matemática perfeita no eixo X */
+  z-index: 3; /* Fica por cima da linha dourada */
+}
+
+.footer-top-illustration img {
+  width: 100px; /* Controle o tamanho ideal da sua ilustração aqui */
+  height: auto;
+  display: block;
+}
+.p-sociais-footer {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 20px;
+}
+
+.redes-sociais a {
+  color: #ffffff;
+  font-size: 24px; /* Tamanho confortável para os ícones */
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.redes-sociais a:hover {
+  color: #bfa054; /* Ícone fica dourado ao passar o mouse */
+  transform: translateY(-3px);
+}
+
+/* Botão Flutuante / Topo */
+#link-topo {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #bfa054; /* Detalhe dourado no botão de topo */
+  font-size: 18px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+#link-topo:hover {
+  background-color: #bfa054;
+  color: #061c43;
+  transform: translateY(-5px);
+}
+
+/* Seção de Créditos / Copyright */
+.employment {
   text-align: center;
-  font-weight: 700;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
 }
 
-
-.employment{
-    margin-top: 20px;
-    
+.employment p {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.6;
 }
 
-.employment p{
-    
-    margin-bottom: 2px;
-    font-size: 12px;
-}
+/* Ajustes para Celular */
+@media (max-width: 768px) {
+  .custom-footer {
+    padding: 80px 20px 20px 20px;
+    border-top-left-radius: 100% 40px; /* Suaviza a curva em telas pequenas */
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
 
+  .redes-sociais {
+    justify-content: center;
+  }
+}
