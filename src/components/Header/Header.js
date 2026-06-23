@@ -3,10 +3,6 @@ import './Header.css'
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { Nav} from 'react-bootstrap';
-import facebook from './Img/facebook.png'
-import instagram from './Img/instagram.png'
-import youtube from './Img/youtube.png'
-import tiktok from './Img/tiktok.png'
 import logoDaize from './Img/logo daize lellys.png'
 import { NavLink } from 'react-router-dom';
 
