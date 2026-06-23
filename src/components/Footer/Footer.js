@@ -21,16 +21,16 @@ const Footer = () => {
         <div className="footer-content">
           <p className="p-sociais-footer">Me siga nas redes sociais:</p>
           <div className="redes-sociais">
-            <a href="https://www.instagram.com/teacherdaize_inglespelabiblia/" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/teacherdaize_inglespelabiblia/" target="_blank" rel="noopener noreferrer">
               <FaInstagram />
             </a>
-            <a href="https://www.youtube.com/DaizeLellyssuaprofessoraforadacaixa" target="_blank" rel="noreferrer">
+            <a href="https://www.youtube.com/DaizeLellyssuaprofessoraforadacaixa" target="_blank" rel="noopener noreferrer">
               <FiYoutube />
             </a>
-            <a href="https://www.tiktok.com/@daizelellys_ingles" target="_blank" rel="noreferrer">
+            <a href="https://www.tiktok.com/@daizelellys_ingles" target="_blank" rel="noopener noreferrer">
               <FaTiktok />
             </a>
-            <a href="https://www.facebook.com/daizelellys" target="_blank" rel="noreferrer">
+            <a href="https://www.facebook.com/daizelellys" target="_blank" rel="noopener noreferrer">
               <FaFacebookF />
             </a>
           </div>
