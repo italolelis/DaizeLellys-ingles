@@ -66,14 +66,13 @@ const Header = () => {
             <Nav.Link style={{ padding: 0 }}>
               <NavLink to="/sobre-mim" className={({ isActive }) => `nav-menu-link ${isActive ? 'active' : ''}`}>QUEM SOU</NavLink>
             </Nav.Link>
-            
-            <Nav.Link style={{ padding: 0 }}>
-              <NavLink to="/portugues-estrangeiros" className={({ isActive }) => `nav-menu-link ${isActive ? 'active' : ''}`}>PORTUGUÊS PARA ESTRANGEIROS</NavLink>
-            </Nav.Link>
-            
-           
+         
             <Nav.Link style={{ padding: 0 }}>
               <NavLink to="/walk-the-talk" className={({ isActive }) => `nav-menu-link ${isActive ? 'active' : ''}`}>WALK THE TALK</NavLink>
+            </Nav.Link>
+
+             <Nav.Link style={{ padding: 0 }}>
+              <NavLink to="/portugues-estrangeiros" className={({ isActive }) => `nav-menu-link ${isActive ? 'active' : ''}`}>PORTUGUÊS PARA ESTRANGEIROS</NavLink>
             </Nav.Link>
             
             <Nav.Link style={{ padding: 0 }}>

@@ -1,117 +1,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&family=Parisienne&display=swap');
-.comentarios {
-    
+/* Card de Depoimento - Estilo Compacto e Elegante */
+.card-comentarios {
+    background: #ffffff;
+    margin: 10px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra bem suave */
+    border: 1px solid #f0e6d2; /* Borda sutil dourada/creme */
+    height: 280px; /* Altura reduzida para ficar compacto */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 50px 40px;
-    background-color:#faeddd;
-
-       
-}
-
-.comentarios>h1 {
-    display: flex;
-    position: relative;
-    font-family: "Parisienne", cursive;
-    font-weight: 700;
-    color: #011433;
-    font-size: 3rem;
-    text-align: center;
-    align-items: center;
-    
-}
-.comentarios>h1::before{
-    content: "";
-    position: absolute;
-    height: 200px;
-    width: 235px;
-    inset: 0;
-    background-size: contain;
-    z-index: -1;
-    opacity: 0.7;
-    
-    
-   
-}
-
-.comments-carrossel {
-    display: flex;
-    flex-wrap: nowrap; /* Impede que os itens quebrem a linha */
-    width: 50%;
-    padding: 20px;
     justify-content: flex-start;
-    
+    transition: transform 0.3s ease;
 }
 
-.card-comentarios {
-    height: 400px;
-    margin-right: 15px; /* Espaço entre os cartões */
-    padding: 20px;
-    background: #011433;
-    font-family: 'Rowdies', cursive;
-    color: #faeddd;
-    border-radius: 24px; /* Bordas arredondadas suaves como na sua foto original */
-    box-shadow: 0px 15px 35px rgba(27, 38, 59, 0.15);
-    z-index: 2;
-    border: 4px solid #d4af37;
-     /* Impede que os cartões se estiquem */
-    
-}
-.estados{
-    font-size: 15px;
-}
-.img-estrela{
-    width: 100px;
-    margin-top: -30px;
+.card-comentarios:hover {
+    transform: translateY(-5px);
 }
 
-.comment-p {
-    padding-top: 20px;
-    color: #faeddd;
-    text-align: left;
+/* Container do Cabeçalho (Foto + Nome) */
+.aluno-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 15px;
 }
 
-*::-webkit-scrollbar {
-    height: 6px;
-    width: 6px;
+.aluno-foto {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #a88d60; /* Dourado da marca */
 }
 
-*::-webkit-scrollbar-track {
-    border-radius: 5px;
-    background-color: transparent;
+.aluno-info h4 {
+    font-size: 1.1rem;
+    color: #011433; /* Azul escuro */
+    margin: 0;
+    font-weight: 700;
 }
 
-*::-webkit-scrollbar-track:hover {
-    background-color: #B8C0C2;
+.estado-aluno {
+    font-size: 0.85rem;
+    color: #a88d60; /* Dourado */
+    margin: 0;
 }
 
-*::-webkit-scrollbar-track:active {
-    background-color: #B8C0C2;
+/* Depoimento */
+.depoimento-texto {
+    font-size: 0.9rem;
+    color: #4a5568;
+    line-height: 1.5;
+    font-style: italic; /* Dá um toque mais pessoal ao relato */
+    overflow-y: auto;
+    flex-grow: 1;
 }
 
-*::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background-color: #d4af37;
+/* Cor e estilo das setas */
+.react-multiple-carousel__arrow {
+    background: #d4af37 !important; /* Dourado da marca */
+    border-radius: 50%;
+    opacity: 1;
 }
 
-*::-webkit-scrollbar-thumb:hover {
-    background-color: #d4af37;
+.react-multiple-carousel__arrow:hover {
+    background: #b8962f !important; /* Dourado mais escuro no hover */
 }
 
-*::-webkit-scrollbar-thumb:active {
-    background-color: #d4af37;
-} 
+/* Reposicionamento para ficar nas laterais */
+.react-multiple-carousel__arrow--left {
+    left: -10px !important; /* Move a seta esquerda para fora do bloco */
+}
 
-@media (max-width: 800px) {
-    .comments-carrossel {
-        width: 250px;
+.react-multiple-carousel__arrow--right {
+    right: -10px !important; /* Move a seta direita para fora do bloco */
+}
+
+/* Garante que o carrossel tenha espaço para as setas não ficarem "cortadas" */
+.comments-carrossel {
+    padding: 0 40px; /* Adiciona respiro nas laterais */
+}
+
+@media (min-width: 768px) {
+    .aluno-header {
+        flex-direction: row; /* Volta a ser lado a lado no computador */
+        justify-content: center;
+        text-align: left;
     }
-    .text-comentarios {
-        overflow-y: scroll;
-        overflow-x: hidden;
-        width: 100%;
-        height: 110px;
+.comments-carrossel {
+        width: 100% !important;
+        padding: 0 15px !important;
+      
     }
 
-   } 
+    /* Ajusta o card para não ficar cortado */
+    .card-comentarios {
+        margin: 0 5px !important; /* Reduz a margem lateral no mobile */
+        padding: 15px !important;
+    }
+
+    /* Oculta as setas se elas estiverem atrapalhando ou reposiciona-as */
+    .react-multiple-carousel__arrow {
+        transform: scale(0.7); /* Diminui o tamanho das setas no mobile */
+    }
+}

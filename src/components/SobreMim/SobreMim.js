@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { RiAccountCircleFill } from "react-icons/ri";
+import Comentarios from '../../components/Comentarios/Comentarios'
 
 import daize from './img/quem-sou.png'; 
 import './SobreMim.css';
@@ -45,6 +46,7 @@ function SobreMim() {
 
         </Row>
       </Container>
+      <Comentarios></Comentarios>
     </div>
   );
 }

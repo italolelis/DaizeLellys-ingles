@@ -13,22 +13,12 @@ const Metodologia = () => {
 
     <div className='metodologia'>
 
-      <h1 className="animate__animated animate__fadeInRight">Como minhas aulas funcionam</h1>
+      <h1 className="animate__animated animate__fadeInRight">Português para Estrangeiros</h1>
       <p className="animate__animated animate__fadeInRight">Aprenda fora da caixa de modo simples e divertido</p>
       <Container fluid className='text-biblia'>
         <Row>
           <Col sm={6} className='video-youtube-metodologia'>
-            <ReactPlayer 
-              className='react-player'
-              url='https://www.youtube.com/embed/Dwpj0o5RU1w?si=bJKiyY_KqukPRMKR'
-              width='100%'
-              height='100%'
-              light={
-                <img src={wallpaper} alt='wallpaper' width="100%" height='100%'/>
-            }
-              controls
-              allowfullscreen>
-            </ReactPlayer>
+         
                          
           </Col>
           
@@ -41,7 +31,7 @@ const Metodologia = () => {
             <br></br>
             Utilizamos também o recurso da música para ensinar e ajudar aos alunos a memorizar versículos da Bíblia, aumentando assim, consideravelmente seu vocabulário.
           </p>
-          <button className='button-ingles' ><a href='#curso' target='blank'>Veja nossos cursos</a></button>
+          <button className='button-ingles' ><a href='#curso' target='blank'>Agendar aula</a></button>
           </Col>
         </Row>
       </Container>

@@ -20,15 +20,15 @@ function Comentarios() {
     superLargeDesktop: {
         // the naming can be any, depends on you.
         breakpoint: { max: 4000, min: 1024 },
-        items: 1
+        items: 4
     },
     desktop: {
         breakpoint: { max: 1024, min: 800 },
-        items: 1
+        items: 4
     },
     tablet: {
         breakpoint: { max: 800, min: 464 },
-        items: 1
+        items: 2
     },
     mobile: {
         breakpoint: { max: 464, min: 0 },
@@ -41,7 +41,7 @@ function Comentarios() {
     image:grace,
     name:'Grace',
     state:'Fortaleza',
-    comment:'Fazia 30 anos que não estudava inglês e com apoio dos meus filhos e esposo e por gostar de inglês, resolvi voltar a estudar e com a metodologia da Bíblia facilitou muito o meu aprendizado, eu sabia que não iria ser fácil pois tinha que ter a dedicação mas que eu falo sempre que em cada aula eu aprendo um pouco de inglês e estou muito feliz com esse aprendizado.'
+    comment:'Faziam 30 anos que não estudava inglês e com apoio dos meus filhos e esposo e por gostar de inglês, resolvi voltar a estudar e com a metodologia da Bíblia facilitou muito o meu aprendizado, eu sabia que não iria ser fácil pois tinha que ter a dedicação mas que eu falo sempre que em cada aula eu aprendo um pouco de inglês e estou muito feliz com esse aprendizado.'
   },
   {
     id:2,
@@ -94,48 +94,26 @@ function Comentarios() {
     state:'Campina Grande',
     comment: 'Eu comecei o curso para aprimorar o meu inglês, o curso ajudou muito a melhorar minha fala e a minha escrita, assim como a minha comunicação que está mais natural, esse curso é muito bom e vai me ajudar a realizar o sonho de estudar no exterior.'
   },
- 
-
-
-  
 ]
 
-  return (
-
+ return (
     <div className='comentarios'>
       
-      <h1>Depoimentos</h1>
-      
-      <Carousel responsive={responsive}  className='comments-carrossel'>
-     
-      {comentarios.map((comentario)=>(
-       
-       <div key={comentario.id} className='card-comentarios'>
-
-          <Card.Img variant="top" src={comentario.image} style={{
-            
-            height: '5rem',
-            width: '5rem',
-            borderRadius: '50%',
-          
-          }} />
-          <Card.Body>
-          <Card.Title>
-          <h3>{comentario.name}</h3>
-          <p className='estados'>{comentario.state}</p>
-          <img src={estrela} alt='' className='img-estrela'/>
-          </Card.Title>
-          <div className='comment-p'>
-          <Card.Text className='text-comentarios'>
-            {comentario.comment}
-          </Card.Text>
-          </div>
-          </Card.Body>
+       <Carousel responsive={responsive} className='comments-carrossel' infinite={true} autoPlay={true} rtl={false}>
+    {comentarios.map((comentario) => (
+  <div className="card-comentarios" key={comentario.id}>
+    {/* Adicionei a classe aluno-header aqui */}
+    <div className="aluno-header">
+        <img src={comentario.image} className="aluno-foto" />
+        <div className="aluno-info">
+            <h4 className="nome-aluno">{comentario.name}</h4>
+            <p className="estado-aluno">{comentario.state}</p>
         </div>
-     
-      ))}
-        </Carousel>
-
+    </div>
+    <p className="depoimento-texto">"{comentario.comment}"</p>
+  </div>
+))}
+       </Carousel>
     </div>
   )
 }
