@@ -1,7 +1,6 @@
 import React from 'react'
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
-import {Card} from 'react-bootstrap'
 import './Comentarios.css'
 import grace from './img/grace.png'
 import ellenerica from './img/ellenerica.png'
@@ -11,7 +10,6 @@ import netto from './img/netto.png'
 import joalisson from './img/joalisson.png'
 import leonardo from './img/leonardo.png'
 import walter from './img/walter.jpeg'
-import estrela from './img/estrela.png'
 
 
 function Comentarios() {
@@ -104,7 +102,7 @@ function Comentarios() {
   <div className="card-comentarios" key={comentario.id}>
     {/* Adicionei a classe aluno-header aqui */}
     <div className="aluno-header">
-        <img src={comentario.image} className="aluno-foto" />
+        <img src={comentario.image} className="aluno-foto" alt='' />
         <div className="aluno-info">
             <h4 className="nome-aluno">{comentario.name}</h4>
             <p className="estado-aluno">{comentario.state}</p>

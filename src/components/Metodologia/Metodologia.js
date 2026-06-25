@@ -1,6 +1,5 @@
 import React from 'react'
 import './Metodologia.css'
-import background from './Img/background-portugues.png'
 
 const Metodologia = () => {
   return (
