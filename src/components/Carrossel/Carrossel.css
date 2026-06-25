@@ -1,14 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Satisfy&display=swap");
 
 .template {
-    min-height: 100vh; /* Evita que a header seja empurrada para fora */
+    /* Evita que a header seja empurrada para fora */
     background-color: #faeddd;
     color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
     
-  
 }
 /* Container geral */
 .div-geral-carrossel {
@@ -25,28 +24,31 @@ height: auto; /* A altura vai ser exatamente a altura real da imagem */
 display: block;
 } 
 
-#btn-flutuante{
+#btn-flutuante {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999; /* Garante que fique acima de tudo */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#btn-flutuante a {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    right: 0.5em;
-    bottom: 0.5em;
-    z-index: 1;
-    cursor: pointer;
-    text-align: center;
-    font-size: 4em;
-    padding: 5px;
-    transition: font-size 0.5s;
-}
-
-#btn-flutuante a{
+    width: 60px;  /* Largura fixa */
+    height: 60px; /* Altura fixa */
+    background: #ffffff; /* Fundo branco */
+    border-radius: 50%; /* Mantém o formato circular */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    font-size: 65px; /* Tamanho do ícone dentro do círculo */
+    color: #25D366; /* Cor do WhatsApp */
     text-decoration: none;
-    color: #ffffff;
 }
 
 #btn-flutuante:hover{
-   font-size: 5em;   
+   transform: scale(1.1);  
 }
 
 
