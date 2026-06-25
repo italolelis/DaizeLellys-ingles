@@ -1,35 +1,89 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.container-valores{
-    width: 100%;
-    height: 100%;
+/* Garante que o rodapé fique sempre embaixo se a página tiver pouco conteúdo */
+.page-valores-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-}
-.linha{
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    margin: 10px;
-    border-radius: 5px;
-    margin-bottom: 50px;
-   
-    
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #fbeede;
 }
 
-
-.link-valores{
-padding: 0.5rem 2.5rem;
-background-color:#b22234;
-border-radius: 20px;
-color: #ffff;
-
+.container-valores {
+    display: flex;
+    flex-direction: column; /* Alinha a imagem e depois o botão, um abaixo do outro */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 40px 20px;
+    flex: 1; /* Faz o container ocupar o espaço util entre o Header e Footer */
 }
 
-.link-valores a{
+/* Container da imagem para controlar o tamanho ideal */
+.imagem-wrapper {
+    width: 100%;
+    max-width: 1000px; /* Impede que a imagem fique gigante em monitores grandes */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.valores {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Faz a imagem cobrir o espaço sem distorcer as proporções */
+    border-radius: 12px; /* Opcional: deixa as bordas da foto arredondadas e modernas */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Opcional: dá uma leve profundidade na foto */
+}
+
+/* Container do Botão */
+.button-precos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* O Botão estilizado */
+.link-valores {
+    padding: 1rem 3.5rem; /* Aumentei um pouco para dar mais destaque */
+    background-color: #011433;
+    border-radius: 50px; /* Botão mais arredondado estilo moderno */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(178, 34, 52, 0.3);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.link-valores a {
     text-decoration: none;
-    color: #ffff;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+}
+
+/* Efeito ao passar o mouse */
+.link-valores:hover {
+    background-color: #a87e14;
+    transform: translateY(-2px); /* Cria um efeito sutil de flutuar */
+}
+
+/* --- RESPONSIVIDADE PARA CELULARES (Telas menores que 768px) --- */
+@media (max-width: 768px) {
+    .container-valores {
+        padding: 20px 15px;
+    }
+    
+    .imagem-wrapper {
+        margin-bottom: 20px;
+    }
+    
+    .link-valores {
+        width: 90%; /* Em celulares, o botão fica maior e mais fácil de tocar */
+        padding: 1rem 2rem;
+    }
 }

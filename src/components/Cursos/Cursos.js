@@ -20,7 +20,7 @@ const Cursos = () => {
     {
       id: 1,
       image: comunicacao,
-      title: "comunicação desde o 1° dia",
+      title: "Comunicação desde o 1° dia",
       text: 'Foco em usar o inglês imediatamente.',
     },
     {
