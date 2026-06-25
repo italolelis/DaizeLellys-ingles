@@ -2,12 +2,12 @@ import React from "react";
 
 import "react-multi-carousel/lib/styles.css";
 
-import biblia from "./Img/ingles-atraves-da-biblia.jpeg";
-import viagens from "./Img/viagens.png";
-import negocios from "./Img/negocios.png";
-import musica from "./Img/musica.jpeg";
-import conversa from "./Img/conversa.png";
-import estrangeiro from "./Img/estrangeiro.png";
+import comunicacao from "./Img/comunicacao.png";
+import aprendizagem from "./Img/aprendizagem.png";
+import chuncks from "./Img/chuncks.png";
+import confianca from "./Img/confianca.png";
+import cultura from "./Img/cultura.png";
+import portugues from "./Img/portugues.png";
 import "./Cursos.css";
 import realLife from "./Img/english-for-real-life.png"
 
@@ -19,40 +19,42 @@ const Cursos = () => {
   const cursos = [
     {
       id: 1,
-      image: biblia,
-      title: "Inglês através da Bíblia",
-      /*text: 'O curso de "Inglês através da Bíblia" tem o objetivo de preparar o aluno para comunicar-se de forma eficaz em inglês do Nível Iniciante A1 ao Avançado C1.O projeto traz uma abordagem cristã de ensino da Língua Inglesa que utiliza textos da Bíblia, informações bíblicas e a própria Bíblia em inglês, como veículo para o ensino.',*/
+      image: comunicacao,
+      title: "comunicação desde o 1° dia",
+      text: 'Foco em usar o inglês imediatamente.',
     },
     {
       id: 2,
-      image: viagens,
-      title: "Inglês para Viagens",
-      /*text: 'Prepare-se para viajar com nosso curso de inglês especializado! No primeiro módulo, você aprenderá a lidar com situações essenciais no aeroporto, avião e alfândega. No segundo módulo, focamos em reservas de hotel, refeições em restaurantes e exploração da cidade. Com instrutores experientes, você desenvolverá habilidades linguísticas para uma viagem tranquila. Junte-se a nós e viaje com confiança!',*/
+      image: aprendizagem,
+      title: "Aprendizagem contextualizada",
+      text: 'Vocábulario e gramática em situações reais',
     },
     {
       id: 3,
-      image: negocios,
-      title: "Inglês para Negócios",
-      /*text: "É uma modalidade específica e se concentra no aprendizado do vocabulário para o meio empresarial. Ou seja, é mais formal e é usado como uma ferramenta de linguagem para negócios, mais técnica e adequada ao contexto profissional. Além disso, o estudo do Business English parte de um conhecimento prévio do idioma, pelo menos a partir do intermediário.",*/
+      image: chuncks,
+      title: "Chunks de linguagem",
+      text: "Expressões naturais para fluidez espontânea.",
     },
     {
       id: 4,
-      image: musica,
-      title: "Inglês com Música",
-      /*text: "Já parou para pensar no poder da música no aprendizado? A música faz parte do nosso dia a dia e, sem perceber, muitas vezes já estamos em contato com o inglês através das canções que ouvimos. No curso Inglês com Música, você vai muito além de apenas escutar. Vamos explorar juntos o significado e o contexto das músicas, analisar a letra e a tradução, e, claro, trabalhar cuidadosamente a pronúncia para que você aprenda a cantar e falar com mais confiança.",*/
+      image: confianca,
+      title: "Confiança antes da perfeição",
+      text: "Ambiente seguro para praticar e errar sem medo.",
     },
     {
       id: 5,
-      image: conversa,
-      title: "Conversation Class",
-      /*text: "Nossas aulas de conversação focam em falar inglês, diferente das aulas convencionais. Nosso curso prepara você para conversar sobre qualquer assunto, seja para uma entrevista de emprego, reunião com parceiros estrangeiros ou bate-papo com um amigo estrangeiro. Praticando conversação, você se sentirá mais seguro em diversas situações.",*/
+      image: cultura,
+      title: "Cultura, reflexão e significado",
+      text: "Cultura, pensamento crítico e conexão.",
     },
+    
     {
       id: 6,
-      image: estrangeiro,
-      title: "Português para Estrangeiros",
-      /*text: "Nosso curso objetiva proporcionar a estrangeirosa oportunidade de aprender Português, como se fala no Brasil, de maneira simples e clara. Usamos situações do dia-a-dia, bem como músicas e séries, deixando o aprendizado dinâmico e funcional.",*/
+      image: portugues,
+      title: "Português para estrangeiros",
+      text: "Cultura, pensamento crítico e conexão.",
     },
+
   ];
 
   return (
@@ -63,7 +65,7 @@ const Cursos = () => {
         <ScrollAnimation animateIn='fadeInDown'>
       <img className="img-real-life" src={realLife} alt=""></img>
       <h2 className="cursos-h1">Inglês para a vida real, não só para livros.</h2>
-      <p className="cursos-p">Veja minhas modalidades</p>
+      <p className="cursos-p">Sobre o Método WALK THE TALK</p>
        </ScrollAnimation>
       <button className="btn-cursos">
         <a
