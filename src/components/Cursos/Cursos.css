@@ -1,24 +1,51 @@
-.cursos{
-    
-    align-items: center;
-    padding: 50px;
-    height: 100%;
+.cursos {
+    position: relative; 
     width: 100%;
     background-color: #011433;
     background-size: cover;
-       
-}
-.cursos-h1{
-  text-align: center;
-  font-family: 'Cinzel', serif;
- 
+    clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 100%);
+    margin-top: -59px; 
+    padding: 100px 20px 50px 20px; 
 }
 
-.img-real-life{
+/* 2. LINHA DOURADA TOTALMENTE ALINHADA */
+.cursos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(60px + 8px); 
+        background: linear-gradient(135deg, 
+        #82600f 0%, 
+        #a87e14 50%, 
+        #d1a63b 75%, 
+        #a87e14 100%
+    );
+    clip-path: polygon(0 60px, 100% 0, 100% 8px, 0 calc(60px + 8px));
+    -webkit-clip-path: polygon(0 60px, 100% 0, 100% 8px, 0 calc(60px + 8px));
+    z-index: 1;
+    pointer-events: none;
+}
+
+.title {
+    position: relative;
+    z-index: 2;
+}
+
+.cursos-h1 {
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  color: #ffffff;
+}
+
+.img-real-life {
   display: flex;
   justify-self: center;
   align-self: center;
-  
+  max-width: 100%; 
+  height: auto;
 }
 
 .container-curso {
@@ -26,67 +53,48 @@
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
-  
-  
+  position: relative;
+  z-index: 2;
 }
 
-.card-curso{
+.card-curso {
   position: relative;
-  color: #ffffff;
+  color: #011433;
   cursor: pointer;
   width: 14rem;
   text-align: center;
   justify-items: center;
-  border:2px solid #011433;
-  box-shadow: 2px 1px #a87e146f ;
+  border: 2px solid #011433;
+  box-shadow: 2px 1px #a87e146f;
   border-radius: 25px;
-  
+  background-color: #fbeede;
 }
-.text-curso{
+
+.text-curso {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-top: 15px;
-   
-  
 }
 
-.title>p{
+.title>p {
   position: relative;
   font-family: 'Cinzel', serif;
-  
-  
-}
-.title>p::before{
-  position: absolute;
-  content: '';
-  width: 95px;
-  height: 2px;
-  background-color: #ffffff;
- 
-    
 }
 
-.imagem{
+.imagem {
   opacity: 1;
   display: block;
   transition: all 0.3s ease-in-out;
-  width:13rem;
+  width: 13rem;
   height: 12rem;
-  border-radius: 30px 30px 30px 30px;
-
+  border-radius: 30px;
 }
 
-
-.cursos-p{
+.cursos-p {
   font-family: 'Cinzel', serif;
   text-align: center;
   font-size: 1.5rem;
-  color: #ffffff;
- 
-}
-
-.cursos-h1{
   color: #ffffff;
 }
 
@@ -102,11 +110,17 @@
   width: 250px;
   height: 65px;
   margin: 40px auto;
+  border: none;
 }
 
 .btn-cursos a {
   text-decoration: none;
   color: #ffffff;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn-cursos:hover {
@@ -118,22 +132,19 @@
   color: #a87e14;
 }
 
+
 @media (max-width: 800px) {
- .cursos{
-  display: flex;
-  flex-direction: column;
-  
- }
+  .cursos {
+    display: flex;
+    flex-direction: column;
+    padding: 90px 20px 40px 20px; 
+  }
 
- .img-real-life{
-  display: flex;
-  width: 100%;
-  max-width: 400px;
- }
-
-     
-} 
- 
+  .img-real-life {
+    width: 90%;
+    max-width: 350px;
+  }
+}
 
 
 

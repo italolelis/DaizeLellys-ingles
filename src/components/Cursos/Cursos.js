@@ -63,7 +63,7 @@ const Cursos = () => {
       <div className="title">
 
         <ScrollAnimation animateIn='fadeInDown'>
-      <img className="img-real-life" src={realLife} alt=""></img>
+        <img className="img-real-life" src={realLife} alt=""></img>
       <h2 className="cursos-h1">Inglês para a vida real, não só para livros.</h2>
       <p className="cursos-p">Sobre o Método WALK THE TALK</p>
        </ScrollAnimation>
