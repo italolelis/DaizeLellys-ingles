@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -6,7 +7,7 @@
 /* ------ Sobre -----*/
 
 .principal{
-    background-color: #ffff;
+    background-color: #faeddd;
 }
 
 .geral{
@@ -20,8 +21,12 @@
 }
 
 .sobre-mim{
-    width: 30rem;
-    height: 30rem;
+  max-width: 100%; 
+  height: auto;   
+  width: 30rem; 
+  border-radius: 25px;
+  border: 4px solid #a88d60; 
+  display: block;
 
 }
 
@@ -31,15 +36,19 @@
     font-weight: 700;
     text-transform: uppercase;
     padding-top: 30px;
-    border-bottom: 2px solid #b22234;
+    border-bottom: 2px solid #a88d60;
     line-height: 1.8;
-    color: #b22234;
+    color: #a88d60;
+    font-family: 'Cinzel', serif;;
+    
 }
 
 
 .texto{
     width: 18rem;
-   
+    color: #011433;
+    font-weight: 500;
+    font-family: 'Cinzel', serif;
 }
 
 
