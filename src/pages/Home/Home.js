@@ -3,7 +3,6 @@ import React from 'react'
 import Carrossel from '../../components/Carrossel/Carrossel'
 import SobreMim from '../../components/SobreMim/SobreMim'
 import Footer from '../../components/Footer/Footer'
-import Motivacao from '../../components/Motivacao/Motivacao'
 import Metodologia from '../../components/Metodologia/Metodologia'
 
 import { Youtube } from '../../components/Youtube/Youtube'
@@ -20,7 +19,7 @@ const Home = () => {
         <Cursos></Cursos>
         <Metodologia></Metodologia>
         {/* <Comentarios></Comentarios> */}
-        {/*<Motivacao></Motivacao> */}
+        {/* <Motivacao></Motivacao> */}
         <Youtube></Youtube>
         {/* <Ebook></Ebook> */}
         <Footer></Footer>
