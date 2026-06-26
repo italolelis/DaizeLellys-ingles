@@ -3,7 +3,6 @@ import React from 'react'
 import Carrossel from '../../components/Carrossel/Carrossel'
 import SobreMim from '../../components/SobreMim/SobreMim'
 import Footer from '../../components/Footer/Footer'
-import Metodologia from '../../components/Metodologia/Metodologia'
 import PortuguesEstrangeiro from '../../components/PortuguesEstrangeiro/PortuguesEstrangeiro'
 
 import { Youtube } from '../../components/Youtube/Youtube'
