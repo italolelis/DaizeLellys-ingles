@@ -120,6 +120,7 @@
 .container-imagem{
     width: 250px;
     height: 150px;
+    max-width: 100%;
     object-fit: contain;
     margin-bottom: 15px;
 }
@@ -128,7 +129,7 @@
     color: #ffffff;
     font-size: 1.1rem;
     font-weight: 600;
-    margin: 0;
+    margin: 0 0 4px 0;
 }
 .subtexto-caracteristica{
     font-style: italic;
@@ -172,13 +173,39 @@
     .subtitulo-secao {
         font-size: 1.5rem;
     }
+  
     .caracteristicas-container {
-        flex-direction: column; /* Empilha os cards no celular */
-        gap: 16px;
-        padding: 0 20px;
+        flex-direction: row; 
+        gap: 0; /* Mantém colado para a linha vertical funcionar */
+        margin: 25px auto;
+        padding: 0 5px; /* Reduz o espaçamento nas laterais da tela */
+    }
+
+    .card-caracteristica {
+        padding: 5px 8px; /* Reduz muito o espaço interno para caber tudo */
+    }
+
+    /* Reduz o tamanho das imagens no celular */
+    .container-imagem {
+        width: 100px;  /* Diminuído de 70px para 40px */
+        height: 80px; /* Diminuído de 70px para 40px */
+        margin-bottom: 8px; /* Diminui o espaço entre a imagem e o título */
+    }
+
+    /* Reduz o tamanho dos textos para caberem em telas pequenas */
+    .texto-caracteristica {
+        font-size: 0.85rem; /* Título menor no mobile */
+        margin: 0 0 3px 0;
+    }
+
+    .subtexto-caracteristica {
+        font-size: 0.7rem; /* Subtextos menores para não quebrarem muitas linhas */
+        line-height: 1.1;
     }
     
-    .card-caracteristica {
-        padding: 15px;
+    /* Mantém as linhas verticais douradas entre eles mesmo no celular */
+    .card-caracteristica:not(:last-child) {
+        border-right: 1px solid rgba(168, 126, 20, 0.4);
+        border-bottom: none; /* Garante que não crie linha embaixo */
     }
 }
