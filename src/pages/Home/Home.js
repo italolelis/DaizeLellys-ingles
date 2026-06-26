@@ -19,7 +19,6 @@ const Home = () => {
         <WalktheTalk></WalktheTalk>
         <PortuguesEstrangeiro></PortuguesEstrangeiro>
         {/* <Comentarios></Comentarios> */}
-        {/* <Motivacao></Motivacao> */}
         <Youtube></Youtube>
         {/* <Ebook></Ebook> */}
         <Footer></Footer>
