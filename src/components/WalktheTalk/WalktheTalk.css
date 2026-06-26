@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
 .cursos {
     position: relative; 
     width: 100%;
@@ -29,6 +31,7 @@
     pointer-events: none;
 }
 
+
 .title {
     position: relative;
     z-index: 2;
@@ -46,6 +49,26 @@
   align-self: center;
   max-width: 100%; 
   height: auto;
+}
+.destaque-the {
+    color: #a87e14; 
+    font-family: 'Dancing Script', cursive;
+    
+    /* Ajustes de tamanho e peso */
+    font-size: 1.5em;
+    font-weight: 600;
+    
+    /* Inclinação */
+    display: inline-block;
+    transform: rotate(-10deg);
+    
+    /* Ajuste para subir a palavra */
+    position: relative;
+    top: -5px; /* Ajuste este valor (ex: -5px, -15px) para subir ou descer conforme necessário */
+    
+    /* Espaçamento */
+    margin: 0 5px;
+    
 }
 
 .container-curso {

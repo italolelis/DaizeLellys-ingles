@@ -8,13 +8,13 @@ import chuncks from "./Img/chuncks.png";
 import confianca from "./Img/confianca.png";
 import cultura from "./Img/cultura.png";
 import portugues from "./Img/portugues.png";
-import "./Cursos.css";
+import "./WalktheTalk.css";
 import realLife from "./Img/english-for-real-life.png"
 
 import ScrollAnimation from 'react-animate-on-scroll';
 
 
-const Cursos = () => {
+const WalktheTalk = () => {
 
   const cursos = [
     {
@@ -65,7 +65,7 @@ const Cursos = () => {
         <ScrollAnimation animateIn='fadeInDown'>
         <img className="img-real-life" src={realLife} alt=""></img>
       <h2 className="cursos-h1">Inglês para a vida real, não só para livros.</h2>
-      <p className="cursos-p">Sobre o Método WALK THE TALK</p>
+      <p className="cursos-p">Sobre o Método WALK <span className="destaque-the">the</span> TALK</p>
        </ScrollAnimation>
       <button className="btn-cursos">
         <a
@@ -96,4 +96,4 @@ const Cursos = () => {
    
   );
 };
-export default Cursos;
+export default WalktheTalk;

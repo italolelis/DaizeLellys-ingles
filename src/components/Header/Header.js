@@ -33,7 +33,7 @@ const Header = () => {
 
   return (
    <Navbar
-  expand="lg"
+  expand="xl"
   expanded={expanded}
   onToggle={() => setExpanded(!expanded)}
   className={`custom-navbar ${scrolled ? 'scrolled' : ''}`}
