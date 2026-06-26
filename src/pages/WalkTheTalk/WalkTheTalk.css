@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&family=Monsieur+La+Doulaise&family=Parisienne&display=swap');
+
+.walk-the-talk-section {
+    background-color: #faeddd; /* Mantenha a cor que você está usando */
+    padding-top: 80px; /* Reduzido de 80px para 30px ou menos */
+    padding-bottom: 80px;
+    position: relative; /* Importante para o efeito de transição */
+    
+}
+
+.walk-the-talk-section::before {
+    content: '';
+    position: absolute;
+    top: -50px; /* Ajuste a altura do degradê */
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, #F4EFE6);
+    pointer-events: none; /* Garante que não bloqueie cliques */
+}
+
+.walk-the-talk-titulo {
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* Primeira parte com a fonte Cinzel */
+.walk-the-talk-titulo .parte-cinzel {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem; /* Ajuste o tamanho como preferir */
+  font-weight: 600;
+  color: #031d46; /* Cor branca para o fundo escuro */
+}
+
+/* Segunda parte com a fonte Dancing Script (Estilo Cursivo) */
+.walk-the-talk-titulo .parte-dancing {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.5rem; /* Um pouco maior para compensar a caligrafia */
+  font-weight: 700;
+  color: #dfb15b; /* Aquele tom dourado elegante da imagem premium */
+  margin-left: 8px; /* Espaço entre as duas fontes */
+  font-style: italic;
+}
+.walk-the-talk-texto {
+    font-size: 1.1rem;
+    color: #011433;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-family: 'Cinzel', serif;
+}
+
+/* Estilo do botão conforme imagem_42f4cb.jpg */
+.btn-saiba-mais {
+   font-family: 'Cinzel', serif;
+    display: inline-flex;
+    align-items: center;
+    background-color: #011433; /* Azul escuro da imagem */
+    color: #ffffff;
+    padding: 12px 25px;
+    border-radius: 50px; /* Bem arredondado */
+    text-decoration: none;
+    font-weight: 500;
+    border: 2.5px solid #a88d60; /* Borda dourada fina */
+}
+
+.btn-saiba-mais:hover {
+  background-color: #031d46;
+}
+.btn-icone {
+     
+    margin-left: 10px;
+    color: #a88d60; /* Ícone dourado */
+}
+
+
+/* Efeito da imagem: sumindo suavemente para a esquerda */
+.walk-the-talk-imagem img {
+  max-width: 500px; 
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 25px;
+  border: 2.5px solid #a88d60
+}
+
+.div-button {
+    display: flex; /* Permite controlar o alinhamento facilmente */
+    justify-content: flex-start; /* Alinha à esquerda no desktop */
+    margin-top: 20px;
+}
+/* Responsividade */
+@media (max-width: 991px) {
+    .walk-the-talk-titulo { font-size: 2.5rem; text-align: center;margin-top: 80px;}
+    .walk-the-talk-texto { text-align: center;}
+    .walk-the-talk-imagem { display: none; }
+    .walk-the-talk-conteudo { display: flex; flex-direction: column; align-items: center; }
+    .div-button { justify-content: center; /* Centraliza o botão no mobile */
+    }
+
+  .walk-the-talk-titulo .parte-cinzel {
+    font-size: 2rem; /* Diminui o tamanho no celular */
+    display: block;    /* Faz o "Como nasceu o" ocupar a linha toda... */
+    margin-bottom: 5px; 
+  }
+
+  .walk-the-talk-titulo .parte-dancing {
+    font-size: 2.2rem; /* Diminui a fonte cursiva no celular */
+    display: block;    /* ...e joga o "Walk the Talk" para a linha de baixo com elegância */
+    margin-left: 0;    /* Remove o espaço lateral já que agora mudou de linha */
+  }
+}

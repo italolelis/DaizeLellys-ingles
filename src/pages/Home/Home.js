@@ -20,7 +20,7 @@ const Home = () => {
         <Cursos></Cursos>
         <Metodologia></Metodologia>
         {/* <Comentarios></Comentarios> */}
-        <Motivacao></Motivacao>
+        {/*<Motivacao></Motivacao> */}
         <Youtube></Youtube>
         {/* <Ebook></Ebook> */}
         <Footer></Footer>
