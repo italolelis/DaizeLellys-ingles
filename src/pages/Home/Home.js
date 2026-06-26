@@ -4,10 +4,10 @@ import Carrossel from '../../components/Carrossel/Carrossel'
 import SobreMim from '../../components/SobreMim/SobreMim'
 import Footer from '../../components/Footer/Footer'
 import Motivacao from '../../components/Motivacao/Motivacao'
-import Metodologia from '../../components/Metodologia/Metodologia'
+import PortuguesEstrangeiro from '../../components/PortuguesEstrangeiro/PortuguesEstrangeiro'
 
 import { Youtube } from '../../components/Youtube/Youtube'
-import Cursos from '../../components/Cursos/Cursos'
+import WalktheTalk from '../../components/WalktheTalk/WalktheTalk'
 
 
 
@@ -17,8 +17,8 @@ const Home = () => {
        
         <Carrossel></Carrossel>
         <SobreMim></SobreMim>
-        <Cursos></Cursos>
-        <Metodologia></Metodologia>
+        <WalktheTalk></WalktheTalk>
+        <PortuguesEstrangeiro></PortuguesEstrangeiro>
         {/* <Comentarios></Comentarios> */}
         <Motivacao></Motivacao>
         <Youtube></Youtube>
