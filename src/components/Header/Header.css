@@ -1,24 +1,22 @@
 /* ==========================================================================
-   ESTILOS DO HEADER (DAIZE LELLYS)
+   ESTILOS DO HEADER (DAIZE LELLYS) 
    ========================================================================== */
 
 /* Navbar Principal */
 .custom-navbar {
   background-color: #f5ebe0;
   width: 100%;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  padding: 15px 0 !important; /* Trocado height fixo por preenchimento interno dinâmico */
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 150px;
   box-shadow: none;
   transition: all 0.3s ease-in-out;
 }
 
 /* Navbar em estado de Rolagem (Scroll) */
 .custom-navbar.scrolled {
-  height: 75px;
+  padding: 10px 0 !important; /* Reduz o tamanho da barra de forma suave */
   box-shadow: 0 4px 30px rgba(1, 20, 51, 0.05);
 }
 
@@ -26,17 +24,20 @@
 .navbar-container {
   padding-left: 4vw;
   padding-right: 4vw;
-  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 /* Efeito Dourado ao passar o mouse nos links */
-.nav-link a {
+.nav-link a, .nav-menu-link {
     text-decoration: none;
     color: #011433; /* Cor original azul marinho */
     transition: color 0.3s ease; /* Transição suave */
 }
 
-.nav-link a:hover {
+.nav-link a:hover, .nav-menu-link:hover {
     color: #a87e14 !important; /* Dourado ao passar o mouse */
 }
 
@@ -45,43 +46,42 @@
   text-decoration: none;
   display: flex;
   align-items: center;
-  height: 100%;
 }
 
-/* Ajuste Dinâmico da Imagem da Logo (Compensando os espaços em branco) */
+/* Ajuste Dinâmico da Imagem da Logo */
 .logo-image {
-  height: 200px;
+  height: 140px; /* Reduzido de 200px para um valor real que não quebra o layout */
   width: auto;
+  min-height: 120px;
   display: block;
   object-fit: contain;
-  margin-top: -32px;
-  margin-bottom: -32px;
   transition: all 0.3s ease-in-out;
 }
 
 /* Logo no Scroll */
 .custom-navbar.scrolled .logo-image {
-  height: 120px;
-  margin-top: -25px;
-  margin-bottom: -25px;
+  height: 85px; /* Encolhe sutilmente no scroll */
+  min-height: 80px;
 }
 
 /* Menu de Links */
 .nav-menu {
-  gap: 24px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
   font-family: 'Montserrat', 'Arial', sans-serif;
   font-weight: 600;
   flex-direction: row;
   font-size: 0.85rem;
   letter-spacing: 0.5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 /* Links do Menu Individual */
 .nav-menu-link {
-  text-decoration: none;
-  color: #011433;
   padding-bottom: 4px;
-  transition: color 0.2s ease;
 }
 
 /* Link Ativo (Página Atual) */
@@ -93,7 +93,7 @@
 /* Botão Agendar Aula */
 .btn-agendar {
   background-color: #b58d3d;
-  color: #ffffff;
+  color: #ffffff !important;
   font-weight: 600;
   font-family: 'Montserrat', sans-serif;
   font-size: 0.85rem;
@@ -103,56 +103,102 @@
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(181, 141, 61, 0.2);
   transition: all 0.3s ease;
+  white-space: nowrap; /* Impede que o texto do botão quebre em duas linhas */
 }
 
 .btn-agendar:hover {
   background-color: #a07a30;
-  color: #ffffff;
+  transform: translateY(-1px);
 }
 
-@media (max-width: 991px) {
-    /* Ajusta a logo para não quebrar */
-    .logo-daize h1 {
-        font-size: 1.3rem;
+/* === ESTILIZAÇÃO DO BOTÃO HAMBÚRGUER DO BOOTSTRAP === */
+.navbar-toggler {
+  border: none !important;
+  padding: 8px !important;
+}
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+
+/* ==========================================================================
+   MEDIA QUERY - CORREÇÃO DEFINITIVA DE ALINHAMENTO DO HAMBÚRGUER (1200PX)
+   ========================================================================== */
+@media (max-width: 1200px) {
+    
+    .navbar-expand-xl .navbar-collapse {
+        display: none !important;
+    }
+
+    .custom-navbar, .custom-navbar.scrolled {
+      height: auto !important;
+      padding: 10px 0 !important;
+    }
+
+    /* O CONTAINER PRINCIPAL: Ganha posicionamento relativo para controlarmos o topo */
+    .navbar-container {
+        display: flex !important;
+        position: relative !important;
+        align-items: flex-start !important; 
+        justify-content: space-between !important;
+        flex-wrap: wrap;
+        padding-top: 30px !important; /* Dá um respiro no topo */
+    }
+
+    /* A LOGO: Alinhada perfeitamente à esquerda */
+    .logo-image, .custom-navbar.scrolled .logo-image {
+        height: 150px !important; 
+        min-height: 150px !important;
+        margin: 0 !important;
+    }
+
+    /* O BOTÃO AGENDAR: Fixado com margem controlada para alinhar pelo topo */
+    .btn-agendar {
+        display: inline-block !important;
+        width: auto !important;
+        margin-top: 0 !important; /* Zera qualquer margem antiga */
+        margin-right: 60px !important; /* Abre espaço na direita para o hambúrguer entrar */
+        padding: 10px 20px !important;
+        font-size: 0.85rem !important;
     }
     
-    /* Garante que o menu suspenso tenha a cor de fundo correta */
+    /* O BOTÃO HAMBÚRGUER: Arrancado do fluxo problemático e travado no topo direito */
+    .navbar-expand-xl .navbar-toggler {
+        display: block !important;
+        position: absolute !important;
+        top: 10px !important; /* Controla a altura exata do topo, igualando à logo e botão */
+        right: 4vw !important; /* Alinha perfeitamente com a margem da tela */
+        margin: 0 !important;
+        padding: 8px !important;
+        z-index: 1010 !important;
+    }
+
+    /* CAIXA BEGE DO MENU: Empurrada mais para baixo para não cobrir a logo e os botões */
     #basic-navbar-nav.navbar-collapse {
-        flex-direction: column;
-        background-color: #fbeede; /* Cor azul marinho que você definiu */
-        border-radius: 10px;
-        padding: 15px;
-        margin-top: 10px;
-        width: 100%;
-       
+        flex-direction: column !important;
+        width: 100% !important;
+        background-color: #fbeede !important;
+        border-radius: 12px !important;
+        padding: 25px !important;
+        margin-top: 25px !important; /* Garante que ela nasça abaixo do botão e da logo */
+        box-shadow: 0 10px 30px rgba(1, 20, 51, 0.15) !important;
     }
 
-    .header .navbar-nav {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
+    #basic-navbar-nav.navbar-collapse.show {
+        display: flex !important; 
     }
 
-    /* Cor dos links dentro do menu mobile */
-    .header .navbar-nav .nav-link a {
-        color: #fbeede !important; /* Cor clara para contrastar com o fundo azul */
-        font-weight: 600;
+    .nav-menu {
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 20px !important;
+        padding: 15px 0 !important;
     }
 
-    /* Efeito hover dourado também no mobile */
-    .header .navbar-nav .nav-link a:hover {
-        color: #a87e14 !important;
+    .nav-menu-link {
+        display: block !important;
+        font-size: 1.1rem !important;
+        color: #011433 !important;
     }
-    
-    /* Ajuste para o botão no mobile */
-    .content-container {
-        justify-content: center;
-        margin-top: 15px;
-
-    }
-
-    .navbar-collapse.show {
-  display: flex !important;
 }
-}
-

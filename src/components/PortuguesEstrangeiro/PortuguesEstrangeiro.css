@@ -1,0 +1,211 @@
+/* Container que agrupa os itens */
+.texto-box {
+    text-align: center;
+    position: relative;
+    padding-bottom: 40px; /* Espaço extra para o traço não colidir com o texto */
+    font-family: 'Cinzel', serif;
+    color: #ffffff;
+}
+
+.secao-portugues {
+    position: relative;
+    background-color: #011433;
+    padding: 100px 20px;
+    /* Linhas elegantes no topo */
+ background-image: 
+        /* 1ª Faixa (Verde Profundo com brilho) */
+        linear-gradient(135deg, #013d06 0%, #025f0a 50%, #03800e 75%, #025f0a 100%),
+        /* 2ª Faixa (Seu gradiente dourado) */
+        linear-gradient(135deg, #82600f 0%, #a87e14 50%, #d1a63b 75%, #a87e14 100%);
+    
+    background-repeat: no-repeat;
+    /* Cada faixa tem 4px de altura, totalizando 8px no topo */
+    background-size: 100% 8px, 100% 10px; 
+    /* A verde fica no topo (0), a dourada começa logo abaixo (4px) */
+    background-position: 0 0, 0 4px;
+}
+.container-conteudo {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Ajuste da imagem do título */
+.titulo-imagem {
+    max-width: 70%;
+    height: auto;
+    margin-bottom: 10px;
+  
+}
+
+.subtitulo-secao {
+    color: #e2e6ec;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.destaque-texto {
+    position: relative;
+    color: #a87e14;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-style: italic;
+    display: inline-block; /* Mantém o alinhamento correto */
+    padding-bottom: 5px;
+}
+
+.destaque-texto::after {
+    content: '';
+    position: absolute;
+    
+    /* Ajuste fino para posicionar exatamente sob o texto */
+    top: 100%; 
+    left: 0;
+    
+    /* Tamanho e proporção para parecer uma pincelada */
+    width: 100%;
+    height: 15px; 
+    
+    /* Borda inferior que cria o formato do traço */
+    border-top: 4px solid #a87e14;
+    
+    /* Arredondamento complexo para dar o aspecto de traço manual */
+    border-radius: 50% 50% 0 0/ 100% 100% 0 0;
+    
+    /* Inclinação leve */
+    transform: rotate(-3deg);
+    
+    /* Brilho suave */
+    filter: drop-shadow(0 4px 1px rgba(212, 175, 55, 0.5));
+    
+    pointer-events: none;
+}
+
+
+.descricao-secao {
+    color: #d6dce6;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.caracteristicas-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0; /* Espaço entre os cards */
+    margin: 40px auto; /* Margem superior e inferior */
+    max-width: 950px;
+    width: 100%;
+}
+
+.card-caracteristica {
+    flex: 1;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   
+}
+
+.card-caracteristica:not(:last-child) {
+    border-right: 3px solid #a87e14; /* Linha sutil idêntica à foto */
+}
+
+
+.container-imagem{
+    width: 250px;
+    height: 150px;
+    max-width: 100%;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+.texto-caracteristica {
+    font-family: 'Cinzel', serif; /* Mantém a identidade tipográfica */
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+}
+.subtexto-caracteristica{
+    font-style: italic;
+    font-family: sans-serif;
+    color: #b0c4de; /* Tom cinza/azul claro */
+    font-size: 0.95rem;
+    
+    /* O SEGREDO: Zera as margens superior/inferior para aproximar as linhas */
+    margin: 2px 0; 
+    
+    /* Controla a altura da linha para que fiquem bem juntinhas, mas legíveis */
+    line-height: 1.2; 
+    
+    text-align: center;
+ 
+}
+.botao-cta {
+    background-color: #a87e14;;
+    color: #d6dce6;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+.botao-cta:hover {
+    background: #b8962f;
+    transform: translateY(-2px);
+}
+
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .titulo-imagem {
+        max-width: 90%;
+    }
+    .subtitulo-secao {
+        font-size: 1.5rem;
+    }
+  
+    .caracteristicas-container {
+        flex-direction: row; 
+        gap: 0; /* Mantém colado para a linha vertical funcionar */
+        margin: 25px auto;
+        padding: 0 5px; /* Reduz o espaçamento nas laterais da tela */
+    }
+
+    .card-caracteristica {
+        padding: 5px 8px; /* Reduz muito o espaço interno para caber tudo */
+    }
+
+    /* Reduz o tamanho das imagens no celular */
+    .container-imagem {
+        width: 100px;  /* Diminuído de 70px para 40px */
+        height: 80px; /* Diminuído de 70px para 40px */
+        margin-bottom: 8px; /* Diminui o espaço entre a imagem e o título */
+    }
+
+    /* Reduz o tamanho dos textos para caberem em telas pequenas */
+    .texto-caracteristica {
+        font-size: 0.85rem; /* Título menor no mobile */
+        margin: 0 0 3px 0;
+    }
+
+    .subtexto-caracteristica {
+        font-size: 0.7rem; /* Subtextos menores para não quebrarem muitas linhas */
+        line-height: 1.1;
+    }
+    
+    /* Mantém as linhas verticais douradas entre eles mesmo no celular */
+    .card-caracteristica:not(:last-child) {
+        border-right: 1px solid rgba(168, 126, 20, 0.4);
+        border-bottom: none; /* Garante que não crie linha embaixo */
+    }
+}

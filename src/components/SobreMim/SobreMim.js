@@ -46,7 +46,9 @@ function SobreMim() {
 
         </Row>
       </Container>
+      <div className="comentario">
       <Comentarios></Comentarios>
+      </div>
     </div>
   );
 }
