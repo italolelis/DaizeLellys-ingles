@@ -12,6 +12,7 @@ import "./WalktheTalk.css";
 import realLife from "./Img/english-for-real-life.png"
 
 import ScrollAnimation from 'react-animate-on-scroll';
+import { FaStar } from "react-icons/fa";
 
 
 const WalktheTalk = () => {
@@ -67,14 +68,20 @@ const WalktheTalk = () => {
       <h2 className="cursos-h1">Inglês para a vida real, não só para livros.</h2>
       <p className="cursos-p">Sobre o Método WALK <span className="destaque-the">the</span> TALK</p>
        </ScrollAnimation>
-      <button className="btn-cursos">
-        <a
-          href="https://api.whatsapp.com/send?phone=5583999220306&text=Quero+agendar+uma+aula+experimental%21"
-          target="blank"
-        >
-          Comece sua jornada agora!
-        </a>
-      </button>
+      
+<div className="m-4" style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+  <a 
+    href="https://api.whatsapp.com/send?phone=5583999220306&text=Quero+come%C3%A7ar+minha+jornada%21" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="btn-principal-lellys text-nowrap" 
+    style={{ textDecoration: 'none'}}
+  >
+    Comece sua jornada agora
+    <span className="btn-icone-estrela"><FaStar size={18}/></span>
+  </a>
+</div>
+      
       </div>
      
       <div className="container-curso" >

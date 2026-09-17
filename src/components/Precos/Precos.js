@@ -1,9 +1,7 @@
 import React from 'react'
 import './Precos.css'
 import { Col, Container, Row } from 'react-bootstrap'
-import vip from './img/vip.png'
-import grupo from './img/grupo-3.png'
-import grupos from './img/grupos.png'
+
 // import consultoria from './img/consultoria.png'
 
 function Precos() {

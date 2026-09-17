@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+
+.ple-page-wrapper {
+  background-color: #f8f3ea;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* HERO SECTION (AZUL ESCURO) */
+.ple-hero-section {
+  background-color: #011433;
+  color: #ffffff;
+  padding: 80px 16px 100px 16px;
+  position: relative;
+}
+
+.ple-hero-title {
+  font-family: 'Alex Brush', cursive;
+  font-size: 4.2rem;
+  color: #c5a059;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.ple-hero-divider {
+  width: 140px;
+  height: 3px;
+  background: linear-gradient(90deg, #10b981 0%, #3b82f6 50%, #c5a059 100%);
+  margin: 8px auto 24px auto;
+  border-radius: 4px;
+}
+
+.ple-hero-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.ple-hero-lead {
+  font-size: 1.15rem;
+  color: #e2e8f0;
+  max-width: 720px;
+  margin: 0 auto 48px auto;
+  font-weight: 300;
+}
+
+.gold-italic {
+  color: #c5a059;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* CONTAINER DA METODOLOGIA EM 3 PASSOS (SUBSTITUI O BLOCO REPETIDO) */
+.ple-methodology-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  border-radius: 20px;
+  padding: 32px 24px;
+  max-width: 960px;
+  margin: 0 auto;
+  backdrop-filter: blur(5px);
+}
+
+.methodology-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: #c5a059;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+}
+
+.ple-step-item {
+  padding: 12px 16px;
+  position: relative;
+}
+
+.border-side {
+  border-left: 1px solid rgba(197, 160, 89, 0.2);
+  border-right: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.step-number {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 50%;
+  background-color: #c5a059;
+  color: #011433;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.step-icon {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 12px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ple-step-item h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.ple-step-item p {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* SEÇÃO DE CONTEÚDO BEGE */
+.ple-content-section {
+  padding: 80px 16px;
+}
+
+.sub-tag {
+  color: #c5a059;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+}
+
+.section-title-dark {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  color: #011433;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+.line-gold-center {
+  width: 60px;
+  height: 4px;
+  background-color: #c5a059;
+  margin: 12px auto 0;
+  border-radius: 50px;
+}
+
+/* CARDS DE PROGRAMA */
+.ple-program-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px;
+  height: 100%;
+  border: 1px solid rgba(1, 20, 51, 0.06);
+  box-shadow: 0 4px 20px rgba(1, 20, 51, 0.04);
+  transition: all 0.3s ease;
+  outline: none !important;
+  overflow: hidden;
+}
+
+.ple-program-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(1, 20, 51, 0.1);
+  border-color: rgba(197, 160, 89, 0.4);
+}
+
+.card-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background-color: rgba(1, 20, 51, 0.05);
+  color: #011433;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.ple-program-card:hover .card-icon-box {
+  background-color: #011433;
+  color: #c5a059;
+}
+
+.ple-program-card h3 {
+  font-size: 1.25rem;
+  color: #011433;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.card-desc {
+  color: #64748b;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.card-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 16px;
+}
+
+.card-checklist li {
+  font-size: 0.85rem;
+  color: #334155;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.chk {
+  color: #c5a059;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .border-side {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .ple-hero-title {
+    font-size: 3rem;
+  }
+  .ple-hero-subtitle {
+    font-size: 1.8rem;
+  }
+}

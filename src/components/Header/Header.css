@@ -91,24 +91,10 @@
 }
 
 /* Botão Agendar Aula */
-.btn-agendar {
-  background-color: #b58d3d;
-  color: #ffffff !important;
-  font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  padding: 12px 24px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(181, 141, 61, 0.2);
-  transition: all 0.3s ease;
-  white-space: nowrap; /* Impede que o texto do botão quebre em duas linhas */
-}
-
-.btn-agendar:hover {
-  background-color: #a07a30;
-  transform: translateY(-1px);
+.btn-agendar.btn-principal-lellys {
+    padding: 10px 24px !important; /* Altura menor para o cabeçalho, com folga nas laterais */
+    font-size: 0.9rem !important;  /* Mantém a proporção elegante com o menu */
+    white-space: nowrap;          /* Impede que o texto quebre em duas linhas */
 }
 
 /* === ESTILIZAÇÃO DO BOTÃO HAMBÚRGUER DO BOOTSTRAP === */

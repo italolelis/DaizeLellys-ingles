@@ -1,56 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
+.sobre-pagina {
+  background-color: #f7ebd9; /* Fundo bege integrado */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
 }
 
-/* ------ Sobre -----*/
-
-.principal{
-    background-color: #faeddd;
+.sobre-container {
+  padding: 40px 0 80px 0;
+  flex: 1;
 }
 
-.geral{
-    
-    display: flex;
+/* HERO CARD PRINCIPAL */
+.sobre-hero-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(1, 20, 51, 0.05);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  margin-bottom: 60px;
+}
+
+.foto-frame-container {
+  position: relative;
+  display: inline-block;
+}
+
+.foto-perfil {
+  width: 100%;
+  max-width: 360px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(1, 20, 51, 0.15);
+  border: 3px solid #c5a059;
+}
+
+.foto-badge {
+  position: absolute;
+  bottom: -15px;
+  right: -10px;
+  background-color: #011433;
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 14px;
+  border: 2px solid #c5a059;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.badge-anos {
+  color: #c5a059;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.badge-texto {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #cbd5e1;
+}
+
+/* CONTEÚDO DO HERO */
+.tag-subtitulo {
+  color: #c5a059;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+}
+
+.hero-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: #011433;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.hero-cargo {
+  font-size: 1.2rem;
+  color: #475569;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.hero-descricao {
+  color: #334155;
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+/* SEÇÃO TRAJETÓRIA */
+.secao-titulo {
+  font-family: 'Playfair Display', serif;
+  color: #011433;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.linha-divisor {
+  width: 60px;
+  height: 4px;
+  background-color: #c5a059;
+  margin: 12px auto 0;
+  border-radius: 50px;
+}
+
+/* CARDS DE QUALIFICAÇÃO */
+.card-qualificacao {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px;
+  height: 100%;
+  display: flex;
+  gap: 20px;
+  border: 1px solid rgba(1, 20, 51, 0.06);
+  box-shadow: 0 4px 15px rgba(1, 20, 51, 0.03);
+  transition: all 0.3s ease;
+}
+
+.card-qualificacao:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(1, 20, 51, 0.1);
+  border-color: rgba(197, 160, 89, 0.4);
+}
+
+.card-icone-wrapper {
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  border-radius: 14px; /* Mantém as bordas arredondadas */
+  background-color: rgba(1, 20, 51, 0.04);
+  color: #011433;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  overflow: hidden; /* Impede que elementos internos fiquem quadrados */
+  outline: none; /* Remove a borda de foco do navegador */
+}
+
+
+.card-qualificacao:hover .card-icone-wrapper {
+  background-color: #011433;
+  color: #c5a059;
+}
+
+.card-icone {
+  font-size: 1.5rem;
+}
+
+.card-body-custom h3 {
+  font-size: 1.15rem;
+  color: #011433;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.card-body-custom p {
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 991px) {
+  .sobre-hero-card {
+    padding: 24px;
+  }
+  
+  .hero-titulo {
+    font-size: 2.2rem;
+  }
+  
+  .foto-perfil {
+    height: 340px;
+  }
+  
+  .card-qualificacao {
     flex-direction: column;
-    height: 100%;
-    width: 100%;
-    padding: 50px 40px;
-    
+    gap: 14px;
+  }
 }
-
-.sobre-mim{
-  max-width: 100%; 
-  height: auto;   
-  width: 30rem; 
-  border-radius: 25px;
-  border: 4px solid #a88d60; 
-  display: block;
-
-}
-
-.titulo{
-    width: 250px;
-    font-size: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding-top: 30px;
-    border-bottom: 2px solid #a88d60;
-    line-height: 1.8;
-    color: #a88d60;
-    font-family: 'Cinzel', serif;;
-    
-}
-
-
-.texto{
-    width: 18rem;
-    color: #011433;
-    font-weight: 500;
-    font-family: 'Cinzel', serif;
-}
-
-
-
-

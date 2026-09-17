@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../../components/Header/Header'
+import Header from '../../components/Header/Header';
 import { Container, Row, Col } from 'react-bootstrap';
 import Footer from '../../components/Footer/Footer'
 import walkthetalk from './Img/walk-the-talk.PNG'; 
@@ -9,7 +9,7 @@ import './WalkTheTalk.css'
 const WalkTheTalk = () => {
   return (
     <div className="page-valores-container">
-      <Header />
+      <Header/>
 
  <div id="walk-the-talk" className="walk-the-talk">
       <Container className="walk-the-talk-container">

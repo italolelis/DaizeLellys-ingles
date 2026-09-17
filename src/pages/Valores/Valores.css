@@ -1,89 +1,695 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* =========================================================
+   WALK THE TALK — VALORES
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Pacifico&display=swap');
+
+.walk-talk {
+  --navy: #032b57;
+  --navy-dark: #021f40;
+  --gold: #d79518;
+  --gold-light: #e5ad3b;
+  --cream: #F6EBE2;
+  --text: #082d55;
+
+  width: 100%;
+  min-height: 100vh;
+  background: var(--cream);
+  color: var(--text);
+  font-family: "DM Sans", Arial, sans-serif;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-/* Garante que o rodapé fique sempre embaixo se a página tiver pouco conteúdo */
-.page-valores-container {
+.walk-talk *,
+.walk-talk *::before,
+.walk-talk *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO: DUAS COLUNAS (TEXTO LIVRE + FOTO NA DIREITA)
+   ========================================================= */
+
+.walk-hero-duas-colunas {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--cream);
+  align-items: center;
+}
+
+.walk-hero-duas-colunas {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Divide exatamente 50% para cada lado */
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  padding: 40px 20px;
+  gap: 30px;
+}
+
+.hero-coluna-texto {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: transparent;
+}
+
+.hero-coluna-foto {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  max-height: 460px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-coluna-foto img {
+  display: block;
+  height: 100%;
+  max-height: 440px;
+  width: auto;
+  object-fit: contain;
+  object-position: center center;
+
+  /* Mantém o esfumaçado suave apenas nas laterais esquerda e direita */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.1) 4%, rgba(0,0,0,0.6) 18%, black 35%, black 65%, rgba(0,0,0,0.6) 82%, rgba(0,0,0,0.1) 96%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.1) 4%, rgba(0,0,0,0.6) 18%, black 35%, black 65%, rgba(0,0,0,0.6) 82%, rgba(0,0,0,0.1) 96%, transparent 100%);
+}
+
+/* =========================================================
+   ELEMENTOS DE TEXTO E LOGO
+   ========================================================= */
+
+.top-frase-container {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.top-frase {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.arco-sublinhado {
+  width: 150px;
+  height: 15px;
+}
+
+.logo-wrapper-ref {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 18px 0;
+}
+
+.detalhe-risco {
+  position: absolute;
+  width: 45px;
+  height: 8px;
+  border-top: 4px solid var(--gold);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.detalhe-risco.esquerdo {
+  left: 10px;
+  top: 35%;
+  transform: rotate(-35deg);
+}
+
+.detalhe-risco.direito {
+  right: 8px;
+  top: 25%;
+  transform: rotate(35deg);
+}
+
+.coracao-topo,
+.coracao-baixo {
+  position: absolute;
+  color: var(--gold);
+  z-index: 3;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.coracao-topo {
+  top: -5px;
+  left: 48%;
+  transform: translateX(-50%);
+}
+
+.coracao-baixo {
+  right: 20px;
+  bottom: 15px;
+  font-size: 24px;
+}
+
+.walk-logo {
+  position: relative;
+  z-index: 3;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Pacifico", "Brush Script MT", "Segoe Script", cursive;
+  font-weight: 400;
+  line-height: .73;
+  letter-spacing: -2px;
+  transform: rotate(-3deg);
+  color: var(--navy);
+}
+
+.walk-logo span {
+  display: block;
+  font-size: clamp(65px, 7vw, 105px);
+}
+
+.walk-logo small {
+  display: block;
+  color: var(--gold);
+  font-size: clamp(35px, 4vw, 52px);
+  line-height: .9;
+  margin: 5px 0;
+  transform: translateX(-18px);
+  font-weight: 400;
+}
+
+.ingles-faixa {
+  position: relative;
+  margin-top: 11px;
+  padding: 7px 27px;
+  background: var(--navy);
+  color: white;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .08);
+}
+
+.ingles-faixa::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 4px;
+  width: 20px;
+  height: 70%;
+  background: var(--navy);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.ingles-faixa::after {
+  content: "";
+  position: absolute;
+  right: -14px;
+  bottom: 2px;
+  width: 24px;
+  height: 65%;
+  background: var(--navy);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.hero-description {
+  margin: 12px 0 0;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.hero-description strong {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.decoracao-coracao {
+  font-size: 16px;
+  margin-top: 2px;
+  color: var(--gold);
+}
+
+
+/* =========================================================
+   CHOOSE THE IDEAL PLAN (SOBREPOSTO À IMAGEM)
+   ========================================================= */
+
+.titulo-planos {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  margin: -35px auto 20px auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+.titulo-planos span {
+  position: relative;
+  display: inline-block;
+  padding: 12px 55px;
+  background: var(--navy);
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  line-height: 1.15;
+  text-align: center;
+  transform: rotate(-1deg);
+  border-radius: 4px 30px 5px 25px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.titulo-planos span::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 5px;
+  width: 30px;
+  height: 70%;
+  background: var(--navy);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.titulo-planos span::after {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: 4px;
+  width: 30px;
+  height: 70%;
+  background: var(--navy);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+
+/* =========================================================
+   PLANOS DETALHADOS
+   ========================================================= */
+
+.planos-container {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto 25px;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.plano-card {
+  position: relative;
+  min-height: 410px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff; /* Fundo branco limpo para os cards */
+  border: 1.5px solid rgba(190, 130, 20, .75);
+  border-radius: 14px;
+  text-align: center;
+  transition: transform .25s ease;
+  box-shadow: 0 10px 30px rgba(6, 28, 67, 0.05);
+}
+
+.plano-card:hover {
+  transform: translateY(-4px);
+}
+
+.icone-plano {
+  width: 61px;
+  height: 61px;
+  margin: 10px auto 4px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: var(--navy);
+}
+
+.icone-plano svg {
+  width: 38px;
+  height: 38px;
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.plano-card h2 {
+  margin: 2px 0 0;
+  padding: 0 5px;
+  color: var(--navy);
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: .3px;
+}
+
+.plano-titulo {
+  margin-top: 1px;
+  color: var(--gold);
+  font-family: "Pacifico", "Brush Script MT", cursive;
+  font-size: 21px;
+  line-height: 1.2;
+}
+
+.plano-descricao {
+  min-height: 38px;
+  margin: 5px 8px 8px;
+  color: var(--navy);
+  font-size: 9.5px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+/* Preço Principal (Dólar em destaque) */
+.preco {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 4px;
+  margin: 0 9px;
+  padding: 8px 8px;
+  background: var(--gold);
+  color: white;
+  border-radius: 30px;
+  transform: rotate(-1deg);
+}
+
+.preco strong {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.preco span {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Preço Secundário (Reais) */
+.preco-dolar {
+  margin-top: 5px;
+  color: var(--navy);
+  font-size: 20.5px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.equivalente {
+  margin: 10px 12px;
+  padding: 10px 8px;
+  background: rgba(215, 149, 24, 0.12);
+  border: 1px solid rgba(215, 149, 24, 0.4);
+  border-radius: 8px;
+  color: var(--navy);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.equivalente strong {
+  font-weight: 800;
+}
+
+.equivalente small {
+  display: block;
+  margin-top: 3px;
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+/* Bloco Azul Inferior com Benefícios Detalhados */
+.beneficio-container {
+  margin-top: auto;
+  min-height: 88px;
+  padding: 9px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 9px;
+  background: var(--navy);
+  color: white;
+  text-align: left;
+}
+
+.beneficio-linha {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.estrela {
+  flex-shrink: 0;
+  color: var(--gold);
+  font-size: 13px;
+  line-height: 1;
+}
+
+
+/* =========================================================
+   DIFERENCIAIS
+   ========================================================= */
+
+.diferenciais {
+  width: 100%;
+  max-width: 1150px;
+  margin: 15px auto 12px;
+  padding: 50px 25px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: transparent;
+}
+
+.diferencial {
+  min-height: 72px;
+  padding: 4px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  border-right: 1px solid rgba(215, 149, 24, .45);
+}
+
+.diferencial:last-child {
+  border-right: none;
+}
+
+.icone-diferencial {
+  width: 40px;
+  height: 60px;
+  margin-bottom: 4px;
+}
+
+.icone-diferencial svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.diferencial strong {
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.diferencial span {
+  margin-top: 2px;
+  color: var(--navy);
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.cta-area {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1150px;
+  margin: 20px auto 30px;
+  padding: 40px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cta-frase-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cta-frase {
+  color: var(--navy);
+  font-family: "Pacifico", "Brush Script MT", cursive;
+  font-size: 35px;
+  line-height: 1.1;
+  transform: rotate(-3deg);
+}
+
+.cta-frase span {
+  color: var(--gold);
+}
+
+.cta-botao-wrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================================================
+   TABLET & CELULAR
+   ========================================================= */
+
+@media (max-width: 950px) {
+  .walk-hero-duas-colunas {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .hero-coluna-texto {
+    padding: 20px 10px;
+  }
+
+  .planos-container {
+    padding: 0 15px;
+  }
+
+  .diferenciais {
+    padding: 0 15px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .walk-hero-duas-colunas {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    background-color: #fbeede;
-}
+    padding: 20px 10px;
+  }
 
-.container-valores {
-    display: flex;
-    flex-direction: column; /* Alinha a imagem e depois o botão, um abaixo do outro */
+  .hero-coluna-texto {
+    padding: 25px 15px 10px;
+  }
+
+  .hero-coluna-foto {
+    width: 100%;
+    height: 280px;
+    min-height: 280px;
+  }
+
+  .hero-coluna-foto img {
+    width: 100%;
+    height: 280px;
+    min-height: 280px;
+    object-position: center;
+
+    -webkit-mask-image:
+      linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.3) 10%, black 35%, black 100%);
+    mask-image:
+      linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.3) 10%, black 35%, black 100%);
+  }
+
+  .titulo-planos {
+    margin-top: 15px;
+  }
+
+  .planos-container {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    padding: 0 15px;
+  }
+
+  .diferenciais {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 10px;
+    row-gap: 5px;
+  }
+
+  .diferencial {
+    border-right: 1px solid rgba(215, 149, 24, .45);
+    border-bottom: 1px solid rgba(215, 149, 24, .3);
+    padding: 10px 5px;
+  }
+
+  .diferencial:nth-child(2n) {
+    border-right: none;
+  }
+
+  .diferencial:last-child {
+    grid-column: 1 / -1;
+    border-right: none;
+  }
+
+  .cta-area {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 20px 25px;
+    text-align: center;
+  }
+
+  .cta-frase-container {
     align-items: center;
-    justify-content: center;
+  }
+
+  .cta-frase {
+    font-size: 25px;
+  }
+
+  .btn-principal-lellys {
     width: 100%;
-    padding: 40px 20px;
-    flex: 1; /* Faz o container ocupar o espaço util entre o Header e Footer */
-}
-
-/* Container da imagem para controlar o tamanho ideal */
-.imagem-wrapper {
-    width: 100%;
-    max-width: 1000px; /* Impede que a imagem fique gigante em monitores grandes */
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-
-.valores {
-    width: 100%;
-    height: auto;
-    object-fit: cover; /* Faz a imagem cobrir o espaço sem distorcer as proporções */
-    border-radius: 12px; /* Opcional: deixa as bordas da foto arredondadas e modernas */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Opcional: dá uma leve profundidade na foto */
-}
-
-/* Container do Botão */
-.button-precos {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-/* O Botão estilizado */
-.link-valores {
-    padding: 1rem 3.5rem; /* Aumentei um pouco para dar mais destaque */
-    background-color: #011433;
-    border-radius: 50px; /* Botão mais arredondado estilo moderno */
-    border: none;
-    cursor: pointer;
-    box-shadow: 0px 4px 10px rgba(178, 34, 52, 0.3);
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-.link-valores a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 1.1rem;
-    font-weight: bold;
-    display: block;
-    width: 100%;
-}
-
-/* Efeito ao passar o mouse */
-.link-valores:hover {
-    background-color: #a87e14;
-    transform: translateY(-2px); /* Cria um efeito sutil de flutuar */
-}
-
-/* --- RESPONSIVIDADE PARA CELULARES (Telas menores que 768px) --- */
-@media (max-width: 768px) {
-    .container-valores {
-        padding: 20px 15px;
-    }
-    
-    .imagem-wrapper {
-        margin-bottom: 20px;
-    }
-    
-    .link-valores {
-        width: 90%; /* Em celulares, o botão fica maior e mais fácil de tocar */
-        padding: 1rem 2rem;
-    }
+    max-width: 310px;
+  }
 }

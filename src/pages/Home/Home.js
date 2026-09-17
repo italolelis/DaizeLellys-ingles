@@ -5,7 +5,7 @@ import SobreMim from '../../components/SobreMim/SobreMim'
 import Footer from '../../components/Footer/Footer'
 import PortuguesEstrangeiro from '../../components/PortuguesEstrangeiro/PortuguesEstrangeiro'
 
-import { Youtube } from '../../components/Youtube/Youtube'
+import  Youtube  from '../../components/Youtube/Youtube'
 import WalktheTalk from '../../components/WalktheTalk/WalktheTalk'
 
 

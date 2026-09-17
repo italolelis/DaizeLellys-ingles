@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import { FaStar } from "react-icons/fa";
 
 // Importa a sua imagem oficial "daize-logo.png"
 import logoImg from './Img/daize-logo.png'; 
@@ -86,16 +87,19 @@ const Header = () => {
         </Navbar.Collapse>
 
         {/* BOTÃO AGENDAR AULA */}
-        <div className="m-0" style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
-          <a 
-            href="https://api.whatsapp.com/send?phone=5583999220306&text=Quero+agendar+uma+aula+experimental%21" 
-            target="blank" 
-            className="btn-agendar"
-          >
-            AGENDAR AULA
-          </a>
-        </div>
-      </Container>
+<div className="m-0" style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+  <a 
+    href="https://api.whatsapp.com/send?phone=5583999220306&text=Quero+agendar+uma+aula+experimental%21" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="btn-principal-lellys px-4 py-2 text-nowrap" 
+    style={{ textDecoration: 'none', fontSize: '0.9rem' }}
+  >
+    Agendar Aula
+    <span className="btn-icone-estrela"><FaStar size={16}/></span>
+  </a>
+</div>
+   </Container>
     </Navbar>
   );
 }
