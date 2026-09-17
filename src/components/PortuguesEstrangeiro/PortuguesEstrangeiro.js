@@ -4,6 +4,7 @@ import tituloImg from './Img/brasil-cores-da-vida.png'
 import calendarioImg from './Img/calendario.png'
 import culturabrasileiraImg from './Img/cultura-brasileira.png' 
 import aulaonlineImg from './Img/aulaonline.png'
+import { FaStar } from "react-icons/fa";
 
 const PortugueseEstrangeiro = () => {
   return (
@@ -42,11 +43,20 @@ const PortugueseEstrangeiro = () => {
               <p className="subtexto-caracteristica">Rich Brazilian Culture</p>
             </div>
           </div>
+          <div className="m-4" style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+            <a 
+              href="https://api.whatsapp.com/send?phone=5583999220306&text=Quero+aprender+portugu%C3%AAs%21" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-principal-lellys text-nowrap" 
+              style={{ textDecoration: 'none'}}
+            >
+              Schedule a trial lesson
+              <span className="btn-icone-estrela"><FaStar size={18}/></span>
+            </a>
+          </div>
 
-          <button className="botao-cta">
-            Schedule a trial lesson
-          </button>
-        </div>
+         </div>
       </div>
     </section>
   )

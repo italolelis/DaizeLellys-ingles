@@ -4,7 +4,7 @@ import Sobre from './pages/Sobre/Sobre.js';
 import WalkTheTalk from './pages/WalkTheTalk/WalkTheTalk.js';
 import PortuguesPEstrangeiros from './pages/PortuguesPEstrangeiros/PortuguesPEstrangeiros.js';
 import { Routes, Route} from 'react-router-dom';
-import Valores from './pages/Valores/Valores.js';
+import Valores from './pages/Valores/Valores.jsx';
 
 
 

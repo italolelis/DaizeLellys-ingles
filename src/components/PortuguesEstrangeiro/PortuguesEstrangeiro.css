@@ -146,22 +146,7 @@
     text-align: center;
  
 }
-.botao-cta {
-    background-color: #a87e14;;
-    color: #d6dce6;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 20px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 15px;
-}
 
-.botao-cta:hover {
-    background: #b8962f;
-    transform: translateY(-2px);
-}
 
 
 
