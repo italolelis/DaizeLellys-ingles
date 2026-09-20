@@ -1,5 +1,5 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Container, Row, Col, Nav, Tab } from 'react-bootstrap';
 import { 
   FaComments, 
   FaBookOpen, 
@@ -10,78 +10,101 @@ import {
   FaStar,
   FaCheck
 } from 'react-icons/fa';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
-import tituloImg from '../../components/PortuguesEstrangeiro/Img/brasil-cores-da-vida.png'
+import tituloImg from '../../components/PortuguesEstrangeiro/Img/brasil-cores-da-vida.png';
 import './PortuguesPEstrangeiros.css';
 
 const PortuguesPEstrangeiros = () => {
+  const [activeStep, setActiveStep] = useState('step1');
+
   return (
     <div className="ple-page-wrapper">
-      <Header />
-
+     
       {/* 1. HERO SECTION */}
       <section className="ple-hero-section">
         <Container className="text-center">
-    <img src={tituloImg} alt="Brasil: Cores da Vida" className="titulo-imagem" />
-          <h2 className="ple-hero-subtitle">Portuguese for Foreigners</h2>
-          <p className="ple-hero-lead">
-            Experience cultural immersion, achieve fluency, and discover the 
-            <span className="gold-italic"> true essence of Brazil</span>, beyond the pages of a book.
-          </p>
+          
+          <div className="ple-hero-header">
+            <img src={tituloImg} alt="Brasil: Cores da Vida" className="titulo-imagem" />
+            
+            <h2 className="ple-hero-subtitle">Portuguese for Foreigners</h2>
+            
+            <div className="line-gold-soft"></div>
 
-          {/* NOVA SEÇÃO: METODOLOGIA EM 3 PASSOS (SUBSTITUI OS DADOS REPETIDOS) */}
-          <div className="ple-methodology-box">
-            <h3 className="methodology-title">How the Learning Journey Works</h3>
-            <Row className="g-4 justify-content-center mt-2">
-              
-              <Col md={4} sm={12}>
-                <div className="ple-step-item">
-                  <div className="step-number">1</div>
-                  <div className="step-content">
-                    <FaComments className="step-icon" />
-                    <h4>Needs Assessment</h4>
-                    <p>A diagnostic consultation to understand your goals, proficiency level, and routines.</p>
-                  </div>
-                </div>
-              </Col>
-
-              <Col md={4} sm={12}>
-                <div className="ple-step-item border-side">
-                  <div className="step-number">2</div>
-                  <div className="step-content">
-                    <FaBookOpen className="step-icon" />
-                    <h4>Tailored Material</h4>
-                    <p>Custom curriculum built around real-world contexts, business, or daily life in Brazil.</p>
-                  </div>
-                </div>
-              </Col>
-
-              <Col md={4} sm={12}>
-                <div className="ple-step-item">
-                  <div className="step-number">3</div>
-                  <div className="step-content">
-                    <FaGlobeAmericas className="step-icon" />
-                    <h4>Active Immersion</h4>
-                    <p>Live, dynamic classes with real conversation, cultural insights, and immediate feedback.</p>
-                  </div>
-                </div>
-              </Col>
-
-            </Row>
+            <p className="ple-hero-lead mt-3">
+              Experience cultural immersion, achieve fluency, and discover the 
+              <span className="gold-italic"> true essence of Brazil</span>, beyond the pages of a book.
+            </p>
           </div>
 
-          <div className="mt-5">
+          {/* METODOLOGIA EM ABAS */}
+          <div className="ple-methodology-box">
+            <h3 className="methodology-title">How the Learning Journey Works</h3>
+            <div className="line-gold-soft mb-4"></div>
+
+            <Tab.Container activeKey={activeStep} onSelect={(k) => setActiveStep(k)}>
+              <Nav variant="pills" className="ple-tabs-nav justify-content-center mb-4">
+                <Nav.Item>
+                  <Nav.Link eventKey="step1">
+                    <span className="step-badge">1</span> Needs Assessment
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="step2">
+                    <span className="step-badge">2</span> Tailored Material
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="step3">
+                    <span className="step-badge">3</span> Active Immersion
+                  </Nav.Link>
+                </Nav.Item>
+              </Nav>
+
+              <Tab.Content className="ple-tab-content">
+                <Tab.Pane eventKey="step1">
+                  <div className="ple-step-detail">
+                    <FaComments className="step-detail-icon" />
+                    <div>
+                      <h4>Diagnostic Consultation</h4>
+                      <p>We analyze your current proficiency, professional goals, and daily routine in Brazil to build a custom study roadmap.</p>
+                    </div>
+                  </div>
+                </Tab.Pane>
+
+                <Tab.Pane eventKey="step2">
+                  <div className="ple-step-detail">
+                    <FaBookOpen className="step-detail-icon" />
+                    <div>
+                      <h4>Personalized Curriculum</h4>
+                      <p>Exclusive materials focusing on real-world situations, business etiquette, cultural nuances, or academic goals.</p>
+                    </div>
+                  </div>
+                </Tab.Pane>
+
+                <Tab.Pane eventKey="step3">
+                  <div className="ple-step-detail">
+                    <FaGlobeAmericas className="step-detail-icon" />
+                    <div>
+                      <h4>Live Conversation & Culture</h4>
+                      <p>Dynamic 1-on-1 sessions designed to build speaking confidence, refine pronunciation, and master natural expressions.</p>
+                    </div>
+                  </div>
+                </Tab.Pane>
+              </Tab.Content>
+            </Tab.Container>
+          </div>
+
+            <div className="mt-5 text-center">
             <a 
-              href="https://wa.me/seunumero" 
+              href="https://api.whatsapp.com/send?phone=5583999220306&text=Quero+aprender+portugu%C3%AAs%21" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn-principal-lellys"
             >
-              <span>Schedule a trial lesson</span>
-              <FaStar className="btn-icone-estrela" />
+              Schedule a trial lesson <span className="btn-icone-estrela"><FaStar size={16}/></span>
             </a>
           </div>
+
         </Container>
       </section>
 
@@ -90,14 +113,14 @@ const PortuguesPEstrangeiros = () => {
         <Container>
           <div className="text-center mb-5">
             <span className="sub-tag">Tailored Programs</span>
-            <h2 className="section-title-dark">Who is this course for?</h2>
-            <div className="line-gold-center"></div>
+            <h2 className="section-title-light">Who is this course for?</h2>
+            <div className="line-gold-soft mt-3"></div>
           </div>
 
           <Row className="g-4">
             <Col lg={4} md={6}>
-              <div className="ple-program-card">
-                <div className="card-icon-box">
+              <div className="ple-program-card-dinamico">
+                <div className="card-icon-box-animado">
                   <FaBriefcase />
                 </div>
                 <h3>Executives & Expats</h3>
@@ -108,12 +131,13 @@ const PortuguesPEstrangeiros = () => {
                   <li><FaCheck className="chk" /> Corporate Vocabulary</li>
                   <li><FaCheck className="chk" /> Cultural Business Norms</li>
                 </ul>
+                <span className="card-hover-line"></span>
               </div>
             </Col>
 
             <Col lg={4} md={6}>
-              <div className="ple-program-card">
-                <div className="card-icon-box">
+              <div className="ple-program-card-dinamico">
+                <div className="card-icon-box-animado">
                   <FaPassport />
                 </div>
                 <h3>Travelers & Immersion</h3>
@@ -124,12 +148,13 @@ const PortuguesPEstrangeiros = () => {
                   <li><FaCheck className="chk" /> Real-life Situations</li>
                   <li><FaCheck className="chk" /> Accent & Pronunciation</li>
                 </ul>
+                <span className="card-hover-line"></span>
               </div>
             </Col>
 
             <Col lg={4} md={12}>
-              <div className="ple-program-card">
-                <div className="card-icon-box">
+              <div className="ple-program-card-dinamico">
+                <div className="card-icon-box-animado">
                   <FaGraduationCap />
                 </div>
                 <h3>CELPE-Bras Prep</h3>
@@ -140,13 +165,13 @@ const PortuguesPEstrangeiros = () => {
                   <li><FaCheck className="chk" /> Exam Strategies</li>
                   <li><FaCheck className="chk" /> Oral & Written Practice</li>
                 </ul>
+                <span className="card-hover-line"></span>
               </div>
             </Col>
           </Row>
         </Container>
       </section>
 
-      <Footer />
     </div>
   );
 };

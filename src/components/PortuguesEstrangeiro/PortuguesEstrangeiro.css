@@ -1,196 +1,207 @@
-/* Container que agrupa os itens */
-.texto-box {
-    text-align: center;
-    position: relative;
-    padding-bottom: 40px; /* Espaço extra para o traço não colidir com o texto */
-    font-family: 'Cinzel', serif;
-    color: #ffffff;
-}
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap');
 
 .secao-portugues {
     position: relative;
     background-color: #011433;
-    padding: 100px 20px;
-    /* Linhas elegantes no topo */
- background-image: 
-        /* 1ª Faixa (Verde Profundo com brilho) */
-        linear-gradient(135deg, #013d06 0%, #025f0a 50%, #03800e 75%, #025f0a 100%),
-        /* 2ª Faixa (Seu gradiente dourado) */
-        linear-gradient(135deg, #82600f 0%, #a87e14 50%, #d1a63b 75%, #a87e14 100%);
-    
-    background-repeat: no-repeat;
-    /* Cada faixa tem 4px de altura, totalizando 8px no topo */
-    background-size: 100% 8px, 100% 10px; 
-    /* A verde fica no topo (0), a dourada começa logo abaixo (4px) */
-    background-position: 0 0, 0 4px;
+    padding: 40px 0 0 0 !important; /* Zera totalmente o padding inferior */
+    width: 100%;
+    margin-bottom: 0 !important;
+}
+.secao-portugues::before {
+    content: '';
+    display: block;
+    width: 320px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, #006B3F 25%, #a87e14 50%, #006B3F 75%, transparent 100%);
+    margin: 0 auto 50px auto;
+    border-radius: 3px;
+    opacity: 0.85;
 }
 .container-conteudo {
-    max-width: 900px;
+    max-width: 950px;
     margin: 0 auto;
+    padding: 0 20px;
     text-align: center;
 }
 
-/* Ajuste da imagem do título */
+.texto-box {
+    text-align: center;
+    position: relative;
+    color: #ffffff;
+}
+
+/* Imagem de Título */
 .titulo-imagem {
-    max-width: 70%;
+    max-width: 65%;
     height: auto;
-    margin-bottom: 10px;
-  
+    margin-bottom: 15px;
 }
 
 .subtitulo-secao {
+    font-family: 'Cinzel', serif;
     color: #e2e6ec;
     font-size: 2.2rem;
     margin-bottom: 20px;
     font-weight: 700;
 }
 
+.descricao-secao {
+    font-family: 'Montserrat', sans-serif;
+    color: #d6dce6;
+    font-size: 1.35rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Sublinhado Dourado */
 .destaque-texto {
     position: relative;
     color: #a87e14;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     font-weight: 700;
     font-style: italic;
-    display: inline-block; /* Mantém o alinhamento correto */
-    padding-bottom: 5px;
+    display: inline-block;
+    padding-bottom: 2px;
 }
 
 .destaque-texto::after {
     content: '';
     position: absolute;
-    
-    /* Ajuste fino para posicionar exatamente sob o texto */
     top: 100%; 
     left: 0;
-    
-    /* Tamanho e proporção para parecer uma pincelada */
     width: 100%;
-    height: 15px; 
-    
-    /* Borda inferior que cria o formato do traço */
-    border-top: 4px solid #a87e14;
-    
-    /* Arredondamento complexo para dar o aspecto de traço manual */
-    border-radius: 50% 50% 0 0/ 100% 100% 0 0;
-    
-    /* Inclinação leve */
-    transform: rotate(-3deg);
-    
-    /* Brilho suave */
-    filter: drop-shadow(0 4px 1px rgba(212, 175, 55, 0.5));
-    
-    pointer-events: none;
+    height: 3px; 
+    background: linear-gradient(90deg, #006B3F 0%, #a87e14 100%); /* Verde Brasil + Dourado */
+    border-radius: 2px;
 }
 
-
-.descricao-secao {
-    color: #d6dce6;
-    font-size: 1.5rem;
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
-
+/* CARACTERÍSTICAS / CARDS */
 .caracteristicas-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
-    gap: 0; /* Espaço entre os cards */
-    margin: 40px auto; /* Margem superior e inferior */
-    max-width: 950px;
+    align-items: stretch;
+    margin: 40px auto 30px auto;
+    max-width: 900px;
     width: 100%;
 }
 
 .card-caracteristica {
     flex: 1;
-    padding: 10px 30px;
+    padding: 10px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
-   
 }
 
 .card-caracteristica:not(:last-child) {
-    border-right: 3px solid #a87e14; /* Linha sutil idêntica à foto */
+    border-right: 2px solid rgba(168, 126, 20, 0.5);
 }
 
-
-.container-imagem{
-    width: 250px;
-    height: 150px;
-    max-width: 100%;
+.container-imagem {
+    width: 100%;
+    max-width: 180px;
+    height: 120px;
     object-fit: contain;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
+
 .texto-caracteristica {
-    font-family: 'Cinzel', serif; /* Mantém a identidade tipográfica */
+    font-family: 'Cinzel', serif;
     color: #ffffff;
     font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0 0 4px 0;
+    font-weight: 700;
+    margin: 0 0 6px 0;
 }
-.subtexto-caracteristica{
+
+.subtexto-caracteristica {
+    font-family: 'Montserrat', sans-serif;
     font-style: italic;
-    font-family: sans-serif;
-    color: #b0c4de; /* Tom cinza/azul claro */
-    font-size: 0.95rem;
-    
-    /* O SEGREDO: Zera as margens superior/inferior para aproximar as linhas */
+    color: #b0c4de;
+    font-size: 0.88rem;
     margin: 2px 0; 
-    
-    /* Controla a altura da linha para que fiquem bem juntinhas, mas legíveis */
-    line-height: 1.2; 
-    
+    line-height: 1.3; 
     text-align: center;
- 
 }
 
+/* ÁREA DO BOTÃO CTA */
+.portugues-cta-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    position: relative;
+    z-index: 10; /* Garante que o botão fique na camada acima do SVG */
+    width: 100%;
+}
 
+.transicao-portugues-rodape {
+    position: relative;
+    width: 100%;
+    height: 80px; /* Altura ideal no desktop */
+    margin-bottom: -3px; /* Puxa a onda 3px para baixo sobrepondo a seção bege */
+    margin-top: 30px;
+    line-height: 0;
+    display: block;
+}
 
-
-/* Responsivo */
+.transicao-portugues-rodape .svg-curva-puro {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+/* RESPONSIVIDADE MOBILE */
 @media (max-width: 768px) {
-    .titulo-imagem {
-        max-width: 90%;
+    .secao-portugues {
+        padding: 60px 15px 40px 15px;
     }
+
+    .titulo-imagem {
+        max-width: 85%;
+    }
+
     .subtitulo-secao {
         font-size: 1.5rem;
     }
-  
+
+    .descricao-secao {
+        font-size: 1.05rem;
+    }
+
     .caracteristicas-container {
         flex-direction: row; 
-        gap: 0; /* Mantém colado para a linha vertical funcionar */
         margin: 25px auto;
-        padding: 0 5px; /* Reduz o espaçamento nas laterais da tela */
+        padding: 0;
     }
 
     .card-caracteristica {
-        padding: 5px 8px; /* Reduz muito o espaço interno para caber tudo */
+        padding: 5px;
     }
 
-    /* Reduz o tamanho das imagens no celular */
     .container-imagem {
-        width: 100px;  /* Diminuído de 70px para 40px */
-        height: 80px; /* Diminuído de 70px para 40px */
-        margin-bottom: 8px; /* Diminui o espaço entre a imagem e o título */
+        max-width: 80px;
+        height: 60px;
+        margin-bottom: 6px;
     }
 
-    /* Reduz o tamanho dos textos para caberem em telas pequenas */
     .texto-caracteristica {
-        font-size: 0.85rem; /* Título menor no mobile */
-        margin: 0 0 3px 0;
+        font-size: 0.82rem;
+        margin-bottom: 2px;
     }
 
     .subtexto-caracteristica {
-        font-size: 0.7rem; /* Subtextos menores para não quebrarem muitas linhas */
+        font-size: 0.68rem;
         line-height: 1.1;
     }
     
-    /* Mantém as linhas verticais douradas entre eles mesmo no celular */
-    .card-caracteristica:not(:last-child) {
-        border-right: 1px solid rgba(168, 126, 20, 0.4);
-        border-bottom: none; /* Garante que não crie linha embaixo */
+    .transicao-portugues-rodape {
+        height: 55px; /* Reduz a altura da onda em telas menores */
+        margin-bottom: -4px; /* Garante colagem total com a seção inferior */
+        margin-top: 20px;
     }
 }

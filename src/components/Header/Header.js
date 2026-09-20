@@ -1,107 +1,104 @@
 import React, { useState, useEffect } from 'react';
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import { Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { FaStar } from "react-icons/fa";
+import { FaStar } from 'react-icons/fa';
 
-// Importa a sua imagem oficial "daize-logo.png"
-import logoImg from './Img/daize-logo.png'; 
-// Importa o arquivo CSS que criamos acima
-import './Header.css'; 
+import logoImg from './Img/daize-logo.png';
+import './Header.css';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [expanded, setExpanded] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    // Carrega a fonte Montserrat apenas para os textos do menu
-    const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap';
-    link.rel = 'stylesheet';
-    document.head.appendChild(link);
+useEffect(() => {
+  const handleScroll = () => {
+    
+    setScrolled(window.scrollY > 50);
+  };
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
 
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-   <Navbar
-  expand="xl"
-  expanded={expanded}
-  onToggle={() => setExpanded(!expanded)}
-  className={`custom-navbar ${scrolled ? 'scrolled' : ''}`}
->
-      <Container fluid className="navbar-container d-flex justify-content-between align-items-center w-100">
+    <header className={`custom-header ${scrolled ? 'scrolled' : ''}`}>
+      <div className="header-wrapper">
         
-        {/* LOGO */}
-        <Navbar.Brand className="m-0 p-0 d-flex align-items-center" style={{ flexShrink: 0, height: '100%' }}>
-          <a href="/" className="logo-link">
+        {/* 1. LOGO */}
+        <div className="header-logo">
+          <NavLink to="/" onClick={closeMenu}>
             <img 
               src={logoImg} 
-              alt="Daize Lellys - Walk the Talk" 
-              className="logo-image"
+              alt="Daize Lellys" 
+              className="logo-img"
             />
+          </NavLink>
+        </div>
+
+        {/* 2. BOTÃO HAMBÚRGUER (MOBILE) */}
+        <button 
+          className={`hamburger-btn ${menuOpen ? 'open' : ''}`} 
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Alternar Menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        {/* 3. MENU DE NAVEGAÇÃO */}
+        <nav className={`header-nav ${menuOpen ? 'active' : ''}`}>
+          <NavLink to="/" onClick={closeMenu} className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+            HOME
+          </NavLink>
+          <NavLink to="/sobre-mim" onClick={closeMenu} className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+            QUEM SOU
+          </NavLink>
+          <NavLink to="/walk-the-talk" onClick={closeMenu} className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+            WALK THE TALK
+          </NavLink>
+          <NavLink to="/portugues-estrangeiros" onClick={closeMenu} className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+            PORTUGUÊS PARA ESTRANGEIROS
+          </NavLink>
+          <NavLink to="/valores" onClick={closeMenu} className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+            PLANOS
+          </NavLink>
+          <NavLink to="/contato" onClick={closeMenu} className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+            CONTATO
+          </NavLink>
+
+          {/* CTA DENTRO DO MENU MOBILE (PARA MANTER A CONVERSÃO ALTA) */}
+          <div className="mobile-cta-wrapper">
+            <a 
+              href="https://api.whatsapp.com/send?phone=5583999220306&text=Quero+agendar+uma+aula+experimental%21" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              onClick={closeMenu}
+              className="btn-principal-lellys header-btn"
+            >
+              <span>Agendar Aula</span>
+              <span className="btn-icone-estrela"><FaStar size={11} /></span>
+            </a>
+          </div>
+        </nav>
+
+        {/* 4. BOTÃO CTA (DESKTOP) */}
+        <div className="header-cta">
+          <a 
+            href="https://api.whatsapp.com/send?phone=5583999220306&text=Quero+agendar+uma+aula+experimental%21" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            onClick={closeMenu}
+            className="btn-principal-lellys header-btn"
+          >
+            <span>Agendar Aula</span>
+            <span className="btn-icone-estrela"><FaStar size={11} /></span>
           </a>
-        </Navbar.Brand>
+        </div>
 
-        <Navbar.Toggle
-          aria-controls="basic-navbar-nav"
-          onClick={() => setExpanded(!expanded)}
-          />
-        
-        {/* MENU CENTRAL */}
-        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center" style={{ flexGrow: 1 }}>
-          <Nav className="mx-auto d-flex align-items-center nav-menu" onClick={() => setExpanded(false)} >
-            <Nav.Link style={{ padding: 0 }}>
-              <NavLink to="/" className={({ isActive }) => `nav-menu-link ${isActive ? 'active' : ''}`}>HOME</NavLink>
-            </Nav.Link>
-            
-            <Nav.Link style={{ padding: 0 }}>
-              <NavLink to="/sobre-mim" className={({ isActive }) => `nav-menu-link ${isActive ? 'active' : ''}`}>QUEM SOU</NavLink>
-            </Nav.Link>
-         
-            <Nav.Link style={{ padding: 0 }}>
-              <NavLink to="/walk-the-talk" className={({ isActive }) => `nav-menu-link ${isActive ? 'active' : ''}`}>WALK THE TALK</NavLink>
-            </Nav.Link>
-
-             <Nav.Link style={{ padding: 0 }}>
-              <NavLink to="/portugues-estrangeiros" className={({ isActive }) => `nav-menu-link ${isActive ? 'active' : ''}`}>PORTUGUÊS PARA ESTRANGEIROS</NavLink>
-            </Nav.Link>
-            
-            <Nav.Link style={{ padding: 0 }}>
-              <NavLink to="/valores" className={({ isActive }) => `nav-menu-link ${isActive ? 'active' : ''}`}>PLANOS</NavLink>
-            </Nav.Link>
-            
-            <Nav.Link style={{ padding: 0 }}>
-              <NavLink to="/contato" className={({ isActive }) => `nav-menu-link ${isActive ? 'active' : ''}`}>CONTATO</NavLink>
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-
-        {/* BOTÃO AGENDAR AULA */}
-<div className="m-0" style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
-  <a 
-    href="https://api.whatsapp.com/send?phone=5583999220306&text=Quero+agendar+uma+aula+experimental%21" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="btn-principal-lellys px-4 py-2 text-nowrap" 
-    style={{ textDecoration: 'none', fontSize: '0.9rem' }}
-  >
-    Agendar Aula
-    <span className="btn-icone-estrela"><FaStar size={16}/></span>
-  </a>
-</div>
-   </Container>
-    </Navbar>
+      </div>
+    </header>
   );
-}
+};
 
 export default Header;

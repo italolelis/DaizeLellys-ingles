@@ -1,140 +1,193 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Cinzel:wght@600;700&display=swap');
 
+/* ESTILIZAÇÃO GERAL DA SECÇÃO */
 .cursos {
     position: relative; 
     width: 100%;
     background-color: #011433;
-    background-size: cover;
     clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 100%);
     -webkit-clip-path: polygon(0 60px, 100% 0, 100% 100%, 0 100%);
-    margin-top: -59px; 
-    padding: 100px 20px 50px 20px; 
+    margin-top: -60px;
+    padding: 100px 20px 30px 20px; /* Reduzido o padding-bottom para dar respiro natural ao botão */
+    margin-bottom: 0; /* Garante que não haverá fresta antes do Português para Estrangeiros */
 }
 
-/* 2. LINHA DOURADA TOTALMENTE ALINHADA */
+/* LINHA DOURADA UNIFORME */
 .cursos::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: calc(60px + 8px); 
-        background: linear-gradient(135deg, 
+    right: 0;
+    height: 68px;
+    background: linear-gradient(135deg, 
         #82600f 0%, 
         #a87e14 50%, 
         #d1a63b 75%, 
         #a87e14 100%
     );
-    clip-path: polygon(0 60px, 100% 0, 100% 8px, 0 calc(60px + 8px));
-    -webkit-clip-path: polygon(0 60px, 100% 0, 100% 8px, 0 calc(60px + 8px));
-    z-index: 1;
+    clip-path: polygon(0 60px, 100% 0, 100% 8px, 0 68px);
+    -webkit-clip-path: polygon(0 60px, 100% 0, 100% 8px, 0 68px);
+    z-index: 3;
     pointer-events: none;
 }
-
 
 .title {
     position: relative;
     z-index: 2;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.img-real-life {
+    display: block;
+    margin: 0 auto 15px auto;
+    max-width: 100%; 
+    height: auto;
 }
 
 .cursos-h1 {
   text-align: center;
   font-family: 'Cinzel', serif;
   color: #ffffff;
-}
-
-.img-real-life {
-  display: flex;
-  justify-self: center;
-  align-self: center;
-  max-width: 100%; 
-  height: auto;
-}
-.destaque-the {
-    color: #a87e14; 
-    font-family: 'Dancing Script', cursive;
-    
-    /* Ajustes de tamanho e peso */
-    font-size: 1.5em;
-    font-weight: 600;
-    
-    /* Inclinação */
-    display: inline-block;
-    transform: rotate(-10deg);
-    
-    /* Ajuste para subir a palavra */
-    position: relative;
-    top: -5px; /* Ajuste este valor (ex: -5px, -15px) para subir ou descer conforme necessário */
-    
-    /* Espaçamento */
-    margin: 0 5px;
-    
-}
-
-.container-curso {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-}
-
-.card-curso {
-  position: relative;
-  color: #011433;
-  cursor: pointer;
-  width: 14rem;
-  text-align: center;
-  justify-items: center;
-  border: 2px solid #011433;
-  box-shadow: 2px 1px #a87e146f;
-  border-radius: 25px;
-  background-color: #fbeede;
-}
-
-.text-curso {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: 15px;
-}
-
-.title>p {
-  position: relative;
-  font-family: 'Cinzel', serif;
-}
-
-.imagem {
-  opacity: 1;
-  display: block;
-  transition: all 0.3s ease-in-out;
-  width: 13rem;
-  height: 12rem;
-  border-radius: 30px;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
 }
 
 .cursos-p {
   font-family: 'Cinzel', serif;
   text-align: center;
-  font-size: 1.5rem;
-  color: #ffffff;
+  font-size: 1.35rem;
+  color: #fbeede;
+  margin: 0;
 }
 
+.destaque-the {
+    color: #a87e14; 
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5em;
+    font-weight: 600;
+    display: inline-block;
+    transform: rotate(-10deg);
+    position: relative;
+    top: -4px;
+    margin: 0 6px;
+}
 
+/* GRELHA DE CARDS RESPONSIVA (GRID) */
+.container-curso {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Força exatamente 3 colunas no desktop */
+  max-width: 1100px;
+  gap: 25px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  justify-items: center;
+}
+
+/* CARD INDIVIDUAL */
+.card-curso {
+  background-color: #fbeede;
+  border-radius: 20px;
+  border: 1px solid #a87e14;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-curso:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(168, 126, 20, 0.35);
+}
+
+.imagem-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.imagem {
+  width: 100%;
+  max-width: 200px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.text-curso h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #011433;
+  margin-bottom: 8px;
+}
+
+.text-curso p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.92rem;
+  color: #4a5568;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ÁREA DO BOTÃO CTA */
+.walk-cta-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  position: relative;
+  z-index: 2;
+}
+/* RESPONSIVIDADE PARA TABLET E MOBILE */
+@media (max-width: 992px) {
+  .container-curso {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+    gap: 20px;
+  }
+}
+
+/* RESPONSIVIDADE MOBILE */
 @media (max-width: 800px) {
   .cursos {
-    display: flex;
-    flex-direction: column;
-    padding: 90px 20px 40px 20px; 
+    padding: 85px 15px 40px 15px; 
+  }
+
+  .cursos-h1 {
+    font-size: 1.4rem;
+  }
+
+  .cursos-p {
+    font-size: 1.1rem;
   }
 
   .img-real-life {
-    width: 90%;
-    max-width: 350px;
+    width: 85%;
+    max-width: 280px;
+  }
+
+  .container-curso {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .card-curso {
+    max-width: 100%;
   }
 }
 
-
-
+@media (max-width: 600px) {
+  .container-curso {
+    grid-template-columns: 1fr; /* 1 coluna no celular */
+    gap: 16px;
+  }
+}
 

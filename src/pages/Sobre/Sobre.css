@@ -9,7 +9,7 @@
 }
 
 .sobre-container {
-  padding: 40px 0 80px 0;
+  padding: 40px 0 100px 0; /* Reduzido de 80px para 20px no final */
   flex: 1;
 }
 
@@ -150,10 +150,16 @@
 .card-qualificacao:hover .card-icone-wrapper {
   background-color: #011433;
   color: #c5a059;
+  transform: scale(1.05); /* Leve expansão suave */
 }
 
 .card-icone {
   font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.card-qualificacao:hover .card-icone {
+  transform: rotate(-5deg); /* Leve inclinação moderna ao passar o mouse */
 }
 
 .card-body-custom h3 {
@@ -187,5 +193,14 @@
   .card-qualificacao {
     flex-direction: column;
     gap: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .foto-badge {
+    right: 50%;
+    transform: translateX(50%); /* Centraliza o badge abaixo da foto no celular */
+    bottom: -20px;
+    width: max-content;
   }
 }

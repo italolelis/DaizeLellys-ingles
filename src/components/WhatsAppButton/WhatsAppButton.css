@@ -1,0 +1,58 @@
+/* ==========================================================================
+   BOTÃO FLUTUANTE DO WHATSAPP COM ANIMAÇÃO DE PULSO
+   ========================================================================== */
+
+#btn-flutuante {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 9999;
+}
+
+#btn-flutuante a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 58px;
+  height: 58px;
+  background-color: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+  font-size: 34px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  animation: pulseWhatsapp 2s infinite;
+}
+
+#btn-flutuante a:hover {
+  background-color: #1ebd56;
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+  animation: none; 
+}
+
+@keyframes pulseWhatsapp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+@media (max-width: 800px) {
+  #btn-flutuante {
+    right: 18px;
+    bottom: 18px;
+  }
+
+  #btn-flutuante a {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+  }
+}

@@ -1,30 +1,35 @@
-import React from 'react'
+import React from 'react';
+import Carrossel from '../../components/Carrossel/Carrossel';
+import SobreMim from '../../components/SobreMim/SobreMim';
+import WalktheTalk from '../../components/WalktheTalk/WalktheTalk';
+import PortuguesEstrangeiro from '../../components/PortuguesEstrangeiro/PortuguesEstrangeiro';
+import Youtube from '../../components/Youtube/Youtube';
 
-import Carrossel from '../../components/Carrossel/Carrossel'
-import SobreMim from '../../components/SobreMim/SobreMim'
-import Footer from '../../components/Footer/Footer'
-import PortuguesEstrangeiro from '../../components/PortuguesEstrangeiro/PortuguesEstrangeiro'
-
-import  Youtube  from '../../components/Youtube/Youtube'
-import WalktheTalk from '../../components/WalktheTalk/WalktheTalk'
-
-
+// NOVOS IMPORTS:
+import Valores from '../Valores/Valores'; // Ou a secção de planos
+import ContatoForm from '../../components/ContatoForm/ContatoForm';
 
 const Home = () => {
   return (
     <div>
-       
-        <Carrossel></Carrossel>
-        <SobreMim></SobreMim>
-        <WalktheTalk></WalktheTalk>
-        <PortuguesEstrangeiro></PortuguesEstrangeiro>
-        {/* <Comentarios></Comentarios> */}
-        <Youtube></Youtube>
-        {/* <Ebook></Ebook> */}
-        <Footer></Footer>
+      <Carrossel />
+      <SobreMim />
+      <WalktheTalk />
+      <PortuguesEstrangeiro />
       
-    </div>
-  )
-}
+        {/* Exibição dos Planos antes do formulário */}
+      <Valores />
+      <Youtube />
+      
+    
 
-export default Home
+      {/* Formulário no final para capturar o contato do cliente */}
+      <ContatoForm 
+        titulo="Pronto para destravar seu inglês?" 
+        subtitulo="Envie uma mensagem ou tire suas dúvidas diretamente conosco!"
+      />
+    </div>
+  );
+};
+
+export default Home;

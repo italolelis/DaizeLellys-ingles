@@ -7,16 +7,12 @@ import {
   FaBookOpen, 
   
 } from 'react-icons/fa';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
-import daizeSobre from './Img/sobre-mim.jpeg';
+import daizeSobre from './Img/sobre-mim.png';
 import './Sobre.css';
 
 const Sobre = () => {
   return (
     <div className="sobre-pagina">
-      <Header />
-
       <main className="sobre-container">
         <Container>
           
@@ -120,8 +116,6 @@ const Sobre = () => {
 
         </Container>
       </main>
-
-      <Footer />
     </div>
   );
 };
