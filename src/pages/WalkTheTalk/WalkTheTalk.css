@@ -1,114 +1,249 @@
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&family=Monsieur+La+Doulaise&family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Dancing+Script:wght@700&family=Montserrat:wght@400;500;600;700&display=swap');
 
-.walk-the-talk-section {
-    background-color: #faeddd; /* Mantenha a cor que você está usando */
-    padding-top: 80px; /* Reduzido de 80px para 30px ou menos */
-    padding-bottom: 80px;
-    position: relative; /* Importante para o efeito de transição */
-    
+.page-valores-container {
+  background-color: #faeddd;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.walk-the-talk-section::before {
-    content: '';
-    position: absolute;
-    top: -50px; /* Ajuste a altura do degradê */
-    left: 0;
-    width: 100%;
-    height: 50px;
-    background: linear-gradient(to bottom, transparent, #F4EFE6);
-    pointer-events: none; /* Garante que não bloqueie cliques */
+.walk-the-talk-main {
+  flex: 1;
+  padding: 50px 0 20px 0;
 }
 
+/* Badge Superior Tag */
+.badge-tag-dinamico {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(1, 20, 51, 0.08);
+  color: #011433;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  border: 1px solid rgba(197, 160, 89, 0.4);
+}
+
+/* Título */
 .walk-the-talk-titulo {
   margin-bottom: 20px;
-  line-height: 1.4;
 }
 
-/* Primeira parte com a fonte Cinzel */
 .walk-the-talk-titulo .parte-cinzel {
   font-family: 'Cinzel', serif;
-  font-size: 3rem; /* Ajuste o tamanho como preferir */
-  font-weight: 600;
-  color: #031d46; /* Cor branca para o fundo escuro */
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #011433;
 }
 
-/* Segunda parte com a fonte Dancing Script (Estilo Cursivo) */
 .walk-the-talk-titulo .parte-dancing {
   font-family: 'Dancing Script', cursive;
-  font-size: 3.5rem; /* Um pouco maior para compensar a caligrafia */
+  font-size: 3.2rem;
   font-weight: 700;
-  color: #dfb15b; /* Aquele tom dourado elegante da imagem premium */
-  margin-left: 8px; /* Espaço entre as duas fontes */
-  font-style: italic;
-}
-.walk-the-talk-texto {
-    font-size: 1.1rem;
-    color: #011433;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    font-family: 'Cinzel', serif;
+  color: #c5a059;
 }
 
-/* Estilo do botão conforme imagem_42f4cb.jpg */
-.btn-saiba-mais {
-   font-family: 'Cinzel', serif;
-    display: inline-flex;
-    align-items: center;
-    background-color: #011433; /* Azul escuro da imagem */
-    color: #ffffff;
-    padding: 12px 25px;
-    border-radius: 50px; /* Bem arredondado */
-    text-decoration: none;
-    font-weight: 500;
-    border: 2.5px solid #a88d60; /* Borda dourada fina */
+/* ESTILIZAÇÃO DAS ABAS (TABS) */
+.custom-tabs-nav {
+  gap: 10px;
+  border-bottom: none !important;
 }
 
-.btn-saiba-mais:hover {
-  background-color: #031d46;
-}
-.btn-icone {
-     
-    margin-left: 10px;
-    color: #a88d60; /* Ícone dourado */
-}
-
-
-/* Efeito da imagem: sumindo suavemente para a esquerda */
-.walk-the-talk-imagem img {
-  max-width: 500px; 
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  border-radius: 25px;
-  border: 2.5px solid #a88d60
+.custom-tabs-nav .nav-link {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #011433;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 30px;
+  padding: 8px 20px;
+  border: 1px solid rgba(1, 20, 51, 0.1);
+  transition: all 0.3s ease;
 }
 
-.div-button {
-    display: flex; /* Permite controlar o alinhamento facilmente */
-    justify-content: flex-start; /* Alinha à esquerda no desktop */
-    margin-top: 20px;
+.custom-tabs-nav .nav-link:hover {
+  background-color: #ffffff;
+  color: #c5a059;
 }
-/* Responsividade */
+
+.custom-tabs-nav .nav-link.active {
+  background-color: #011433 !important;
+  color: #c5a059 !important;
+  border-color: #c5a059;
+  box-shadow: 0 4px 12px rgba(1, 20, 51, 0.15);
+}
+
+/* CONTEÚDO DAS ABAS */
+.tab-conteudo-box {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 24px 28px;
+  box-shadow: 0 10px 25px rgba(1, 20, 51, 0.05);
+  border-left: 4px solid #c5a059;
+  min-height: 140px;
+}
+
+.tab-pane-inner {
+  position: relative;
+}
+
+.quote-icon {
+  color: rgba(197, 160, 89, 0.25);
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.tab-pane-inner p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  color: #334155;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* IMAGEM COM BADGE FLUTUANTE */
+.walk-the-talk-frame-dinamico {
+  position: relative;
+  display: inline-block;
+}
+
+.walk-the-talk-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 24px;
+  border: 3px solid #c5a059;
+  box-shadow: 0 16px 32px rgba(1, 20, 51, 0.12);
+}
+
+.badge-flutuante {
+  position: absolute;
+  bottom: -15px;
+  left: -15px;
+  background: #011433;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 16px;
+  border: 2px solid #c5a059;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: floatAnim 3s ease-in-out infinite;
+}
+
+@keyframes floatAnim {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.badge-numero {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #c5a059;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.badge-rotulo {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #cbd5e1;
+}
+
+/* CARDS DOS PILARES */
+.pilares-titulo {
+  font-family: 'Cinzel', serif;
+  color: #011433;
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.pilar-card-dinamico {
+  background: #ffffff;
+  padding: 30px 24px;
+  border-radius: 20px;
+  height: 100%;
+  border: 1px solid rgba(1, 20, 51, 0.06);
+  box-shadow: 0 6px 18px rgba(1, 20, 51, 0.03);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.pilar-card-dinamico:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(1, 20, 51, 0.12);
+}
+
+.pilar-icone-animado {
+  width: 56px;
+  height: 56px;
+  background-color: rgba(1, 20, 51, 0.05);
+  color: #011433;
+  font-size: 1.4rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px auto;
+  transition: all 0.3s ease;
+}
+
+.pilar-card-dinamico:hover .pilar-icone-animado {
+  background-color: #011433;
+  color: #c5a059;
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.pilar-hover-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: #c5a059;
+  transition: width 0.4s ease;
+}
+
+.pilar-card-dinamico:hover .pilar-hover-line {
+  width: 100%;
+}
+
+/* AJUSTES RESPONSIVOS (DISPOSITIVOS MÓVEIS) */
 @media (max-width: 991px) {
-    .walk-the-talk-titulo { font-size: 2.5rem; text-align: center;margin-top: 80px;}
-    .walk-the-talk-texto { text-align: center;}
-    .walk-the-talk-imagem { display: none; }
-    .walk-the-talk-conteudo { display: flex; flex-direction: column; align-items: center; }
-    .div-button { justify-content: center; /* Centraliza o botão no mobile */
-    }
-
   .walk-the-talk-titulo .parte-cinzel {
-    font-size: 2rem; /* Diminui o tamanho no celular */
-    display: block;    /* Faz o "Como nasceu o" ocupar a linha toda... */
-    margin-bottom: 5px; 
+    font-size: 2rem;
+    display: block;
   }
 
   .walk-the-talk-titulo .parte-dancing {
-    font-size: 2.2rem; /* Diminui a fonte cursiva no celular */
-    display: block;    /* ...e joga o "Walk the Talk" para a linha de baixo com elegância */
-    margin-left: 0;    /* Remove o espaço lateral já que agora mudou de linha */
+    font-size: 2.4rem;
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-tabs-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .custom-tabs-nav .nav-link {
+    text-align: center;
+    width: 100%;
+  }
+
+  .badge-flutuante {
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
   }
 }

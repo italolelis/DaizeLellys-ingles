@@ -1,107 +1,165 @@
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&family=Parisienne&display=swap');
-/* Card de Depoimento - Estilo Compacto e Elegante */
+/* ==========================================================================
+   SECÇÃO DE DEPOIMENTOS (UX/UI PREMIUM)
+   ========================================================================== */
+
+.comentarios-secao {
+  padding: 60px 20px;
+  width: 100%;
+}
+
+.comentarios-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* CABEÇALHO DA SECÇÃO */
+.comentarios-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.comentarios-tag {
+  color: #a87e14;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.comentarios-header h2 {
+  color: #011433;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.comentarios-header p {
+  color: #555555;
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* CARROSSEL CONTAINER */
+.comments-carrossel {
+  padding: 15px 10px 30px 10px;
+}
+
+/* CARD DE DEPOIMENTO */
 .card-comentarios {
-    background: #ffffff;
-    margin: 10px;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra bem suave */
-    border: 1px solid #f0e6d2; /* Borda sutil dourada/creme */
-    height: 280px; /* Altura reduzida para ficar compacto */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    transition: transform 0.3s ease;
+  background: #ffffff;
+  margin: 10px;
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(1, 20, 51, 0.06);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  min-height: 310px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .card-comentarios:hover {
-    transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(197, 160, 89, 0.2);
 }
 
-/* Container do Cabeçalho (Foto + Nome) */
+/* ESTRELAS */
+.depoimento-estrelas {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 15px;
+}
+
+/* TEXTO DO DEPOIMENTO */
+.depoimento-texto {
+  font-size: 0.93rem;
+  color: #333333;
+  line-height: 1.6;
+  font-style: italic;
+  flex-grow: 1;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* Limita o texto em até 5 linhas sem dar barra de scroll */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* INFORMAÇÕES DO ALUNO */
 .aluno-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid #f2e8d9;
+  padding-top: 15px;
 }
 
 .aluno-foto {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #a88d60; /* Dourado da marca */
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #c5a059;
 }
 
 .aluno-info h4 {
-    font-size: 1.1rem;
-    color: #011433; /* Azul escuro */
-    margin: 0;
-    font-weight: 700;
+  font-size: 1rem;
+  color: #011433;
+  margin: 0;
+  font-weight: 700;
 }
 
 .estado-aluno {
-    font-size: 0.85rem;
-    color: #a88d60; /* Dourado */
-    margin: 0;
+  font-size: 0.8rem;
+  color: #a87e14;
+  margin: 2px 0 0 0;
 }
 
-/* Depoimento */
-.depoimento-texto {
-    font-size: 0.9rem;
-    color: #4a5568;
-    line-height: 1.5;
-    font-style: italic; /* Dá um toque mais pessoal ao relato */
-    overflow-y: auto;
-    flex-grow: 1;
-}
-
-/* Cor e estilo das setas */
+/* CUSTOMIZAÇÃO DAS SETAS DO CARROSSEL */
 .react-multiple-carousel__arrow {
-    background: #d4af37 !important; /* Dourado da marca */
-    border-radius: 50%;
-    opacity: 1;
+  background: #a87e14 !important;
+  border-radius: 50% !important;
+  min-width: 42px !important;
+  min-height: 42px !important;
+  transition: background-color 0.3s ease, transform 0.3s ease !important;
+  z-index: 10;
 }
 
 .react-multiple-carousel__arrow:hover {
-    background: #b8962f !important; /* Dourado mais escuro no hover */
+  background: #011433 !important;
+  transform: scale(1.1);
 }
 
-/* Reposicionamento para ficar nas laterais */
 .react-multiple-carousel__arrow--left {
-    left: -10px !important; /* Move a seta esquerda para fora do bloco */
+  left: 0px !important;
 }
 
 .react-multiple-carousel__arrow--right {
-    right: -10px !important; /* Move a seta direita para fora do bloco */
+  right: 0px !important;
 }
 
-/* Garante que o carrossel tenha espaço para as setas não ficarem "cortadas" */
-.comments-carrossel {
-    padding: 0 40px; /* Adiciona respiro nas laterais */
-}
+/* RESPONSIVIDADE MOBILE */
+@media (max-width: 768px) {
+  .comentarios-secao {
+    padding: 40px 15px;
+  }
 
-@media (min-width: 768px) {
-    .aluno-header {
-        flex-direction: row; /* Volta a ser lado a lado no computador */
-        justify-content: center;
-        text-align: left;
-    }
-.comments-carrossel {
-        width: 100% !important;
-        padding: 0 15px !important;
-      
-    }
+  .comentarios-header h2 {
+    font-size: 1.75rem;
+  }
 
-    /* Ajusta o card para não ficar cortado */
-    .card-comentarios {
-        margin: 0 5px !important; /* Reduz a margem lateral no mobile */
-        padding: 15px !important;
-    }
+  .card-comentarios {
+    margin: 5px;
+    padding: 22px 18px;
+    min-height: 280px;
+  }
 
-    /* Oculta as setas se elas estiverem atrapalhando ou reposiciona-as */
-    .react-multiple-carousel__arrow {
-        transform: scale(0.7); /* Diminui o tamanho das setas no mobile */
-    }
+  .react-multiple-carousel__arrow {
+    display: none !important; /* Esconde setas no mobile para usar swipe com o dedo */
+  }
 }

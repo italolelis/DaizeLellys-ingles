@@ -1,190 +1,207 @@
 /* ==========================================================================
-   ESTILOS DO HEADER (DAIZE LELLYS) 
+   HEADER UX / UI OTIMIZADO
    ========================================================================== */
 
-/* Navbar Principal */
-.custom-navbar {
-  background-color: #f5ebe0;
-  width: 100%;
-  padding: 15px 0 !important; /* Trocado height fixo por preenchimento interno dinâmico */
+.custom-header {
   position: sticky;
   top: 0;
-  z-index: 1000;
-  box-shadow: none;
-  transition: all 0.3s ease-in-out;
-}
-
-/* Navbar em estado de Rolagem (Scroll) */
-.custom-navbar.scrolled {
-  padding: 10px 0 !important; /* Reduz o tamanho da barra de forma suave */
-  box-shadow: 0 4px 30px rgba(1, 20, 51, 0.05);
-}
-
-/* Container de Alinhamento */
-.navbar-container {
-  padding-left: 4vw;
-  padding-right: 4vw;
+  left: 0;
+  width: 100%;
+  background-color: #f8f3ea;
+  z-index: 9999;
+  
+  /* Altura fixa trava o tamanho do container e impede o loop de scroll */
+  height: 100px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  
+  box-shadow: 0 2px 15px rgba(1, 20, 51, 0.05);
+  transition: height 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  will-change: height;
+}
+
+/* Quando entra no estado scrolled */
+.custom-header.scrolled {
+  height: 80px; /* Reduz levemente a altura sem quebrar o layout */
+  background-color: rgba(248, 243, 234, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(1, 20, 51, 0.08);
+}
+
+/* Container interno centralizado */
+.header-wrapper {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+/* LOGO */
+.logo-img {
+  height: 80px !important;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: height 0.3s ease;
+  will-change: height;
+}
+
+.custom-header.scrolled .logo-img {
+  height: 65px !important;
+}
+
+/* NAVEGAÇÃO */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-link {
+  text-decoration: none !important;
+  color: #011433 !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  padding: 4px 0;
+  position: relative;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #c5a059;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-link:hover {
+  color: #c5a059 !important;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
   width: 100%;
 }
 
-/* Efeito Dourado ao passar o mouse nos links */
-.nav-link a, .nav-menu-link {
-    text-decoration: none;
-    color: #011433; /* Cor original azul marinho */
-    transition: color 0.3s ease; /* Transição suave */
+.nav-link.active {
+  color: #c5a059 !important;
+  font-weight: 700;
 }
 
-.nav-link a:hover, .nav-menu-link:hover {
-    color: #a87e14 !important; /* Dourado ao passar o mouse */
+/* AJUSTES DO BOTÃO CTA APENAS NO HEADER */
+.header-cta {
+  flex: 0 0 auto;
 }
 
-/* Logo Link */
-.logo-link {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
+.header-btn {
+  margin: 0 !important;
+  padding: 10px 22px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
 }
 
-/* Ajuste Dinâmico da Imagem da Logo */
-.logo-image {
-  height: 140px; /* Reduzido de 200px para um valor real que não quebra o layout */
-  width: auto;
-  min-height: 120px;
-  display: block;
-  object-fit: contain;
+.header-btn .btn-icone-estrela {
+  width: 22px !important;
+  height: 22px !important;
+}
+
+.mobile-cta-wrapper {
+  display: none;
+}
+
+/* BOTÃO HAMBÚRGUER (MOBILE) */
+.hamburger-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px;
+  z-index: 10000;
+}
+
+.hamburger-btn span {
+  width: 26px;
+  height: 2px;
+  background-color: #011433;
+  border-radius: 2px;
   transition: all 0.3s ease-in-out;
 }
 
-/* Logo no Scroll */
-.custom-navbar.scrolled .logo-image {
-  height: 85px; /* Encolhe sutilmente no scroll */
-  min-height: 80px;
+/* ANIMAÇÃO DO X NO HAMBÚRGUER */
+.hamburger-btn.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
 }
 
-/* Menu de Links */
-.nav-menu {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  font-family: 'Montserrat', 'Arial', sans-serif;
-  font-weight: 600;
-  flex-direction: row;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.hamburger-btn.open span:nth-child(2) {
+  opacity: 0;
 }
 
-/* Links do Menu Individual */
-.nav-menu-link {
-  padding-bottom: 4px;
+.hamburger-btn.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
-
-/* Link Ativo (Página Atual) */
-.nav-menu-link.active {
-  color: #a87e14;
-  border-bottom: 2px solid #a87e14;
-}
-
-/* Botão Agendar Aula */
-.btn-agendar.btn-principal-lellys {
-    padding: 10px 24px !important; /* Altura menor para o cabeçalho, com folga nas laterais */
-    font-size: 0.9rem !important;  /* Mantém a proporção elegante com o menu */
-    white-space: nowrap;          /* Impede que o texto quebre em duas linhas */
-}
-
-/* === ESTILIZAÇÃO DO BOTÃO HAMBÚRGUER DO BOOTSTRAP === */
-.navbar-toggler {
-  border: none !important;
-  padding: 8px !important;
-}
-.navbar-toggler:focus {
-  box-shadow: none !important;
-}
-
 
 /* ==========================================================================
-   MEDIA QUERY - CORREÇÃO DEFINITIVA DE ALINHAMENTO DO HAMBÚRGUER (1200PX)
+   RESPONSIVIDADE (MOBILE & TABLET)
    ========================================================================== */
-@media (max-width: 1200px) {
-    
-    .navbar-expand-xl .navbar-collapse {
-        display: none !important;
-    }
+@media (max-width: 1100px) {
 
-    .custom-navbar, .custom-navbar.scrolled {
-      height: auto !important;
-      padding: 10px 0 !important;
-    }
+  .logo-img {
+    height: 75px !important;
+  }
+  
+  .custom-header.scrolled .logo-img {
+    height: 60px !important;
+  }
 
-    /* O CONTAINER PRINCIPAL: Ganha posicionamento relativo para controlarmos o topo */
-    .navbar-container {
-        display: flex !important;
-        position: relative !important;
-        align-items: flex-start !important; 
-        justify-content: space-between !important;
-        flex-wrap: wrap;
-        padding-top: 30px !important; /* Dá um respiro no topo */
-    }
+  .hamburger-btn {
+    display: flex;
+  }
 
-    /* A LOGO: Alinhada perfeitamente à esquerda */
-    .logo-image, .custom-navbar.scrolled .logo-image {
-        height: 150px !important; 
-        min-height: 150px !important;
-        margin: 0 !important;
-    }
+  .header-cta {
+    display: none;
+  }
 
-    /* O BOTÃO AGENDAR: Fixado com margem controlada para alinhar pelo topo */
-    .btn-agendar {
-        display: inline-block !important;
-        width: auto !important;
-        margin-top: 0 !important; /* Zera qualquer margem antiga */
-        margin-right: 60px !important; /* Abre espaço na direita para o hambúrguer entrar */
-        padding: 10px 20px !important;
-        font-size: 0.85rem !important;
-    }
-    
-    /* O BOTÃO HAMBÚRGUER: Arrancado do fluxo problemático e travado no topo direito */
-    .navbar-expand-xl .navbar-toggler {
-        display: block !important;
-        position: absolute !important;
-        top: 10px !important; /* Controla a altura exata do topo, igualando à logo e botão */
-        right: 4vw !important; /* Alinha perfeitamente com a margem da tela */
-        margin: 0 !important;
-        padding: 8px !important;
-        z-index: 1010 !important;
-    }
+  .header-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f8f3ea;
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 20px;
+    box-shadow: 0 15px 25px rgba(1, 20, 51, 0.1);
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+  }
 
-    /* CAIXA BEGE DO MENU: Empurrada mais para baixo para não cobrir a logo e os botões */
-    #basic-navbar-nav.navbar-collapse {
-        flex-direction: column !important;
-        width: 100% !important;
-        background-color: #fbeede !important;
-        border-radius: 12px !important;
-        padding: 25px !important;
-        margin-top: 25px !important; /* Garante que ela nasça abaixo do botão e da logo */
-        box-shadow: 0 10px 30px rgba(1, 20, 51, 0.15) !important;
-    }
+  .header-nav.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
 
-    #basic-navbar-nav.navbar-collapse.show {
-        display: flex !important; 
-    }
+  .mobile-cta-wrapper {
+    display: block;
+    margin-top: 10px;
+  }
 
-    .nav-menu {
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100% !important;
-        gap: 20px !important;
-        padding: 15px 0 !important;
-    }
-
-    .nav-menu-link {
-        display: block !important;
-        font-size: 1.1rem !important;
-        color: #011433 !important;
-    }
+  
 }

@@ -31,29 +31,27 @@ const Youtube = () => {
   return (
     <section className="youtube-sessao">
       
-      {/* --- ONDA SVG DE TRANSIÇÃO SUPERIOR --- */}
-      <div className="transicao-svg-topo">
+<div className="transicao-svg-topo">
   <svg
     viewBox="0 0 1440 120"
     preserveAspectRatio="none"
     className="svg-curva-puro"
   >
-    {/* Bloco Azul Escuro (Parte Superior) */}
+    {/* 1. Fundo Bege da seção superior */}
+    <rect width="1440" height="120" fill="#f7ebd9" />
+
+    {/* 2. Onda Azul Escura com curva Bezier fluida e suave */}
     <path
-      d="M0,0 L1440,0 L1440,64 L1392,70C1344,75,1248,85,1152,80C1056,75,960,53,864,48C768,43,672,53,576,64C480,75,384,85,288,80C192,75,96,53,48,42.7L0,32 Z"
+      d="M0,40 C360,100 1080,0 1440,50 L1440,120 L0,120 Z"
       fill="#011433"
     />
-    
-    {/* Bloco Bege (Parte Inferior) */}
+
+    {/* 3. Linha Dourada acompanhando exatamente o contorno da onda */}
     <path
-      d="M0,32 L48,42.7C96,53,192,75,288,80C384,85,480,75,576,64C672,53,768,43,864,48C960,53,1056,75,1152,80C1248,85,1344,75,1392,70 L1440,64 L1440,120 L0,120 Z"
-      fill="#f7ebd9"
-    />
-    {/* Linha Dourada acompanhando a Curva da Onda */}
-    <path
-      d="M0,32L48,42.7C96,53,192,75,288,80C384,85,480,75,576,64C672,53,768,43,864,48C960,53,1056,75,1152,80C1248,85,1344,75,1392,70L1440,64"
+      d="M0,40 C360,100 1080,0 1440,50"
       stroke="#c5a059"
-      strokeWidth="10"
+      strokeWidth="3"
+      strokeLinecap="round"
       fill="none"
     />
   </svg>
@@ -69,7 +67,7 @@ const Youtube = () => {
           <h2 className="youtube-titulo">Últimas do Meu Canal</h2>
           <p className="youtube-subtitulo">
             Aulas práticas, dicas de fluência e estratégias do método{' '}
-            <strong style={{ color: '#011433' }}>Walk the Talk</strong> para transformar o seu aprendizado.
+            <strong style={{ color: '#c5a059' }}>Walk the Talk</strong> para transformar o seu aprendizado.
           </p>
           <div className="linha-decorativa"></div>
         </div>
@@ -155,6 +153,28 @@ const Youtube = () => {
           </a>
         </div>
       </Container>
+
+      {/* --- NOVO: TRANSIÇÃO INFERIOR (Azul Escuro -> Bege do Formulário) --- */}
+      <div className="transicao-svg-rodape">
+        <svg
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+          className="svg-curva-puro"
+        >
+          {/* Fundo Bege preenchendo a saída */}
+          <path
+            d="M0,64L48,58.7C96,53,192,43,288,48C384,53,480,75,576,80C672,85,768,75,864,64C960,53,1056,43,1152,48C1248,53,1344,75,1392,80L1440,85L1440,120L0,120Z"
+            fill="#f7ebd9"
+          />
+          {/* Linha Fina Dourada no Rodape */}
+          <path
+            d="M0,64L48,58.7C96,53,192,43,288,48C384,53,480,75,576,80C672,85,768,75,864,64C960,53,1056,43,1152,48C1248,53,1344,75,1392,80L1440,85"
+            stroke="#c5a059"
+            strokeWidth="2"
+            fill="none"
+          />
+        </svg>
+      </div>
 
       {/* Modal */}
       {modalVideo && (

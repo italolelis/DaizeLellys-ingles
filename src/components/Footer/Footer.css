@@ -1,47 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap');
-
-body {
-  background-color: #fbf6ee;
-}
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap');
 
 /* Configuração do Bloco do Rodapé */
 .custom-footer {
   position: relative;
-  background-color: #061c43;
-  margin-top: -30px; /* Puxa o rodapé para cima eliminando o espaço branco */
-  padding: 80px 40px 20px 40px;
-  font-family: 'Montserrat', sans-serif;
-  color: #ffffff;
-  
-  /* CRIA A CURVA NO AZUL (Lado esquerdo alto) */
-  border-top-left-radius: 85% 70px;
-  border-top-right-radius: 0% 0px;
-  border-top: 6px solid #a87e14; 
+  background-color: #011433;
+  margin-top: 60px;
+  padding: 60px 20px 20px 20px;
+  border-top-left-radius: 80px 40px;
+  border-top: 4px solid #a87e14;
+  width: 100%;
+  /* IMPORTANTE: NÃO coloque overflow: hidden aqui para não cortar a xícara */
+  overflow: visible !important; 
 }
-/* POSICIONAMENTO DA ILUSTRAÇÃO NO CENTRO */
+
+/* Garante o assentamento correto da xícara sobre a linha dourada */
 .footer-top-illustration {
   position: absolute;
-  top: -45px;
+  top: -42px; /* Ajuste para flutuar perfeitamente sobre a borda */
   left: 50%;
   transform: translateX(-50%);
-  z-index: 3;
+  z-index: 20; /* Fica acima da borda dourada */
 }
 
 .footer-top-illustration img {
-  width: 95px;
+  width: 85px;
   height: auto;
   display: block;
 }
-
-/* CONTAINER PRINCIPAL (Ocupa 100% da largura com margem lateral pequena) */
+/* CONTAINER PRINCIPAL */
 .footer-main-content {
   width: 100%;
-  padding: 20px 20px 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0 30px 0;
   display: flex;
-  justify-content: space-between; /* Cola a marca na esquerda e sociais na direita */
+  justify-content: space-between;
   align-items: center;
   gap: 30px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   position: relative;
   z-index: 2;
 }
@@ -51,77 +47,58 @@ body {
   display: flex;
   align-items: center;
   gap: 25px;
+  flex-wrap: wrap;
 }
 
 /* LOGO LELLYS IDIOMAS */
 .brand-logo-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinha tudo à esquerda */
-  position: relative;
+  align-items: flex-start;
   line-height: 1;
-}
-.brand-logo-container .brand-title {
-  font-family: 'Caveat', cursive; /* Mantém a fonte manuscrita elegante */
-  font-size: 3.5rem;               /* Tamanho grande de destaque */
-  color: #ffffff;                  /* Cor branca */
-  font-weight: 700;
-  margin: 0;
 }
 
 .brand-title {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Caveat', cursive;
   font-size: 3.2rem;
   color: #ffffff;
-  line-height: 1;
-}
-
-.brand-subtitle {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 2px;
-  color: #ffffff;
   font-weight: 700;
-}
-.brand-logo-container .brand-subtitle {
-  font-family: 'Moon Time', cursive;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 3.5px; /* Espaçamento elegante entre as letras */
-  color: #c49347;        /* Tom dourado */
+  margin: 0;
 }
 
 .brand-subtitle-wrapper {
   display: flex;
   align-items: center;
-  gap: 16px;           /* Aumentei aqui para dar mais distância */
-  margin-top: 5px;  
-  margin-left: 5px;   
+  gap: 8px;
+  margin-top: 2px;
+  margin-left: 4px;
 }
 
-.brand-logo-container .heart-icon-logo {
-  font-size: 0.8rem;
-  color: #c49347;        /* Mesmo tom dourado do IDIOMAS */
+.brand-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #c5a059;
 }
 
 .heart-icon-logo {
-  color: #bfa054;
-  font-size: 0.85rem;
-  margin-left: 2px;
+  color: #c5a059;
+  font-size: 0.8rem;
 }
 
 /* DIVISOR VERTICAL */
 .brand-divider {
   width: 1px;
-  height: 50px;
-  background-color: rgba(255, 255, 255, 0.25);
+  height: 45px;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* SLOGANS - TEXTOS UM ABAIXO DO OUTRO */
+/* SLOGANS */
 .brand-slogans {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .slogan-item {
@@ -132,7 +109,7 @@ body {
 
 .slogan-text {
   display: flex;
-  flex-direction: column; /* FORÇA O TEXTO SEGUNDO A FICAR ABAIXO DO PRIMEIRA */
+  flex-direction: column;
   line-height: 1.2;
 }
 
@@ -144,26 +121,25 @@ body {
 }
 
 .slogan-text span {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 500;
-  color: #ffffff;
-  opacity: 0.95;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .heart-icon-gold {
   color: #a87e14;
   font-size: 0.7rem;
-  margin-top: 3px;
+  margin-top: 2px;
 }
 
 /* TEXTO MANUSCRITO INCLINADO */
 .brand-handwritten {
   font-family: 'Caveat', cursive;
-  font-size: 1.5rem;
-  color: #bfa054;
+  font-size: 1.4rem;
+  color: #c5a059;
   line-height: 1.1;
-  transform: rotate(-4deg); /* Inclinado */
-  margin-left: 15px;
+  transform: rotate(-3deg);
+  margin-left: 10px;
 }
 
 .heart-icon-gold-inline {
@@ -181,43 +157,42 @@ body {
 .social-block {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .p-sociais-footer {
   margin: 0;
-  font-size: 15px;
+  font-size: 0.85rem;
   font-weight: 500;
-  letter-spacing: 0.5px;
   opacity: 0.9;
 }
 
 .redes-sociais {
   display: flex;
-  gap: 18px;
+  gap: 16px;
 }
 
 .redes-sociais a {
   color: #ffffff;
-  font-size: 22px;
+  font-size: 1.3rem;
   transition: transform 0.3s ease, color 0.3s ease;
   display: flex;
   align-items: center;
 }
 
 .redes-sociais a:hover {
-  color: #bfa054;
+  color: #c5a059;
   transform: translateY(-3px);
 }
 
 /* BOTÃO VOLTAR AO TOPO */
 #link-topo {
   color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid #bfa054;
-  font-size: 18px;
-  width: 45px;
-  height: 45px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid #c5a059;
+  font-size: 1rem;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -227,9 +202,9 @@ body {
 }
 
 #link-topo:hover {
-  background-color: #bfa054;
-  color: #061c43;
-  transform: translateY(-5px);
+  background-color: #c5a059;
+  color: #011433;
+  transform: translateY(-4px);
 }
 
 /* CRÉDITOS / COPYRIGHT */
@@ -240,12 +215,20 @@ body {
 
 .employment p {
   margin: 0;
-  font-size: 12px;
+  font-size: 0.75rem;
   opacity: 0.6;
 }
 
-/* RESPONSIVIDADE (CELULAR E TABLET) */
+/* RESPONSIVIDADE (TABLETS E SMARTPHONES) */
 @media (max-width: 992px) {
+  .custom-footer {
+    padding: 60px 20px 20px 20px;
+    margin-top: 50px;
+    border-top-left-radius: 40px 20px;
+    /* Evita que qualquer elemento sobreposto crie scroll lateral */
+    overflow: hidden; 
+  }
+
   .footer-main-content {
     flex-direction: column;
     align-items: flex-start;
@@ -255,7 +238,8 @@ body {
   .brand-section {
     flex-direction: column;
     align-items: flex-start;
-    gap: 15px;
+    gap: 20px;
+    width: 100%;
   }
 
   .brand-divider {
@@ -265,10 +249,55 @@ body {
   .brand-handwritten {
     margin-left: 0;
     transform: rotate(0deg);
+    font-size: 1.25rem;
   }
 
   .footer-social-section {
     width: 100%;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Divisor discreto para separar a marca das redes */
+  }
+}
+
+/* RESPONSIVIDADE MOBILE DO FOOTER */
+@media (max-width: 768px) {
+  .custom-footer {
+    margin-top: 50px;
+    padding-top: 55px;
+    border-top-left-radius: 40px 20px;
+  }
+
+  .footer-top-illustration {
+    top: -35px; /* Eleva levemente no mobile */
+  }
+
+  .footer-top-illustration img {
+    width: 70px; /* Reduz a xícara proporcionalmente */
+  }
+}
+
+/* OTIMIZAÇÃO EXTRA PARA ECRÃS PEQUENOS (ATÉ 480PX) */
+@media (max-width: 480px) {
+  .brand-title {
+    font-size: 2.6rem;
+  }
+
+  .redes-sociais {
+    gap: 12px;
+  }
+
+  .redes-sociais a {
+    font-size: 1.15rem;
+  }
+
+  .footer-top-illustration img {
+    width: 75px; /* Reduz ligeiramente a xícara em ecrãs muito pequenos */
+  }
+  
+  .footer-top-illustration {
+    top: -32px;
   }
 }

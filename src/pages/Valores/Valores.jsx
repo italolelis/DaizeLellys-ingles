@@ -1,8 +1,18 @@
 import React from 'react';
-import Footer from '../../components/Footer/Footer';
-import Header from '../../components/Header/Header';
 import imgcaffee from './img/coffee-english.jpeg';
-import { FaStar } from 'react-icons/fa';
+
+// ÍCONES REACT-ICONS
+import { 
+  FaStar, 
+  FaCalendarDays, 
+  FaComments, 
+  FaPersonRunning, 
+  FaHeart, 
+  FaFileLines 
+} from 'react-icons/fa6';
+import { FiUser, FiUsers } from 'react-icons/fi'; // Ícones finos idênticos ao layout original
+import { HiOutlineUserGroup } from 'react-icons/hi2';
+
 import "./Valores.css";
 
 export default function Valores() {
@@ -10,6 +20,8 @@ export default function Valores() {
     {
       tipo: "INDIVIDUAL",
       titulo: "Premium",
+      destaque: true, // Card de destaque para conversão
+      badge: "MOST POPULAR",
       descricao: (
         <>
           TOTALMENTE PERSONALIZADO
@@ -30,6 +42,7 @@ export default function Valores() {
     {
       tipo: "DUPLA",
       titulo: "Premium",
+      destaque: false,
       descricao: (
         <>
           PERSONALIZADO E COMPARTILHADO
@@ -51,6 +64,7 @@ export default function Valores() {
     {
       tipo: "GRUPO",
       titulo: "Dinâmica Coletiva",
+      destaque: false,
       descricao: (
         <>
           APRENDIZADO EM COMUNIDADE
@@ -72,12 +86,11 @@ export default function Valores() {
 
   return (
     <section className="walk-talk">
-      <Header />
-
-      {/* HERO DUAS COLUNAS: TEXTO LIVRE À ESQUERDA + FOTO COLADA À DIREITA */}
+    
+      {/* HERO DUAS COLUNAS */}
       <div className="walk-hero-duas-colunas">
         
-        {/* TEXTO LIVRE (SEM CARD) */}
+        {/* TEXTO LIVRE */}
         <div className="hero-coluna-texto">
           <div className="top-frase-container">
             <div className="top-frase">
@@ -119,14 +132,17 @@ export default function Valores() {
           </div>
         </div>
 
-        {/* FOTO COLADA NA DIREITA COM ESFUMAÇADO NAS LATERAIS */}
+        {/* FOTO COLADA NA DIREITA */}
         <div className="hero-coluna-foto">
           <img src={imgcaffee} alt="Coffee and English studies" />
         </div>
 
       </div>
 
-      {/* FAIXA DE PLANOS (COM SOBREPOSIÇÃO NA IMAGEM DE CIMA) */}
+      {/* LINHA SUAVE DE SEPARAÇÃO */}
+      <div className="linha-suave-separacao"></div>
+
+      {/* FAIXA DE PLANOS */}
       <div className="titulo-planos">
         <span>
           CHOOSE THE IDEAL PLAN FOR YOU
@@ -135,34 +151,21 @@ export default function Valores() {
 
       {/* PLANOS */}
       <div className="planos-container">
-        {planos.map((plano, index) => (
-          <article className="plano-card" key={index}>
-            <div className="icone-plano">
-              {plano.icone === "individual" && (
-                <svg viewBox="0 0 64 64">
-                  <circle cx="32" cy="18" r="9" />
-                  <path d="M15 53c0-11 7-18 17-18s17 7 17 18" />
-                </svg>
-              )}
-              {plano.icone === "dupla" && (
-                <svg viewBox="0 0 64 64">
-                  <circle cx="23" cy="18" r="8" />
-                  <circle cx="42" cy="18" r="8" />
-                  <path d="M8 53c0-10 6-17 15-17s15 7 15 17" />
-                  <path d="M30 53c0-10 5-17 14-17s13 7 13 17" />
-                </svg>
-              )}
-              {plano.icone === "grupo" && (
-                <svg viewBox="0 0 64 64">
-                  <circle cx="32" cy="14" r="7" />
-                  <circle cx="16" cy="22" r="6" />
-                  <circle cx="48" cy="22" r="6" />
-                  <path d="M20 53c0-10 5-16 12-16s12 6 12 16" />
-                  <path d="M3 53c0-9 5-15 12-15" />
-                  <path d="M61 53c0-9-5-15-12-15" />
-                </svg>
-              )}
-            </div>
+  {planos.map((plano, index) => (
+    <article 
+      className={`plano-card ${plano.destaque ? 'plano-destaque' : ''}`} 
+      key={index}
+    >
+      {plano.badge && (
+        <div className="badge-destaque">{plano.badge}</div>
+      )}
+
+      {/* CÍRCULO AZUL COM ÍCONE DOURADO */}
+      <div className="icone-plano">
+        {plano.icone === "individual" && <FiUser className="react-icon-plano" />}
+        {plano.icone === "dupla" && <HiOutlineUserGroup className="react-icon-plano" />}
+        {plano.icone === "grupo" && <FiUsers className="react-icon-plano" />}
+      </div>
 
             <h2>{plano.tipo}</h2>
             <div className="plano-titulo">{plano.titulo}</div>
@@ -182,7 +185,7 @@ export default function Valores() {
             {/* EQUIVALÊNCIAS DETALHADAS */}
             <div className="equivalente">
               <div>Equivalent to: <strong>{plano.equivalenteDolar}</strong> per lesson</div>
-              <div>Equivalent a: <strong>{plano.equivalenteReal}</strong> por aula</div>
+              <div>Equivalente a: <strong>{plano.equivalenteReal}</strong> por aula</div>
               <small>(1x por semana / once a week)</small>
             </div>
 
@@ -203,12 +206,7 @@ export default function Valores() {
       <div className="diferenciais">
         <div className="diferencial">
           <div className="icone-diferencial">
-            <svg viewBox="0 0 64 64">
-              <rect x="10" y="12" width="44" height="43" rx="4" />
-              <line x1="10" y1="24" x2="54" y2="24" />
-              <line x1="21" y1="7" x2="21" y2="17" />
-              <line x1="43" y1="7" x2="43" y2="17" />
-            </svg>
+            <FaCalendarDays />
           </div>
           <strong>LIVE CLASSES</strong>
           <span>1x per week</span>
@@ -216,49 +214,35 @@ export default function Valores() {
 
         <div className="diferencial">
           <div className="icone-diferencial">
-            <svg viewBox="0 0 64 64">
-              <path d="M10 12h44v32H27L15 54v-10h-5z" />
-              <circle cx="24" cy="28" r="2" />
-              <circle cx="32" cy="28" r="2" />
-              <circle cx="40" cy="28" r="2" />
-            </svg>
+            <FaComments />
           </div>
           <strong>FOCUS ON<br />CONVERSATION</strong>
         </div>
 
         <div className="diferencial">
           <div className="icone-diferencial">
-            <svg viewBox="0 0 64 64">
-              <circle cx="32" cy="12" r="5" />
-              <path d="M27 21l-5 14 9 5-5 16" />
-              <path d="M37 21l5 13-7 6 10 5" />
-            </svg>
+            <FaPersonRunning />
           </div>
           <strong>PRACTICE FROM<br />THE START</strong>
         </div>
 
         <div className="diferencial">
           <div className="icone-diferencial">
-            <svg viewBox="0 0 64 64">
-              <path d="M32 54S10 41 10 24c0-8 5-13 12-13 5 0 9 3 10 7 2-4 6-7 11-7 7 0 12 5 12 13 0 17-23 30-23 30z" />
-            </svg>
+            <FaHeart />
           </div>
           <strong>FOR REAL LIFE<br />USE</strong>
         </div>
 
         <div className="diferencial">
           <div className="icone-diferencial">
-            <svg viewBox="0 0 64 64">
-              <path d="M13 7h29l9 9v41H13z" />
-              <path d="M42 7v10h10" />
-              <line x1="22" y1="28" x2="43" y2="28" />
-              <line x1="22" y1="36" x2="43" y2="36" />
-              <line x1="22" y1="44" x2="38" y2="44" />
-            </svg>
+            <FaFileLines />
           </div>
           <strong>MATERIALS<br />& REMINDERS</strong>
         </div>
       </div>
+
+      {/* LINHA SUAVE DE SEPARAÇÃO */}
+      <div className="linha-suave-separacao"></div>
 
       {/* CTA */}
       <div className="cta-area">
@@ -278,13 +262,11 @@ export default function Valores() {
             rel="noopener noreferrer" 
             className="btn-principal-lellys"
           >
-            <span>I Want to Start / Quero Começar</span>
-            <FaStar className="btn-icone-estrela" />
+            I Want to Start / Quero Começar
+            <span className="btn-icone-estrela"><FaStar size={16}/></span>
           </a>
         </div>
       </div>
-    
-      <Footer />
     </section>
   );
 }
